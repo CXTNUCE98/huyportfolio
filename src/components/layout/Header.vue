@@ -19,11 +19,11 @@ const navItems = [
 
       <!-- Desktop Nav -->
       <nav class="hidden lg:flex items-center">
-        <ul class="flex">
+        <ul class="flex gap-4">
           <li v-for="item in navItems" :key="item.label">
             <a
               :href="item.href"
-              class="px-[18px] text-lg leading-[1.56] text-center transition-colors"
+              class="px-4 text-base leading-[1.5] text-center transition-colors"
               :class="item.label === 'Portfolio' ? 'text-[#7F7F7F]' : 'text-white'"
             >
               {{ item.label }}

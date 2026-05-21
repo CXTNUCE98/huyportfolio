@@ -1,18 +1,154 @@
 <script setup lang="ts">
+interface ProjectAction {
+  label: string
+  active: boolean
+}
+
+interface Project {
+  id: number
+  image: string
+  category: string
+  year: string
+  name: string
+  description: string
+  actions: ProjectAction[]
+}
+
 const activeTab = ref('ALL')
 
-const tabs = ['ALL', 'Website', 'Mobile', 'Case study']
+const tabs = ['ALL', 'WEBSITE', 'MOBILE APP', 'CASE STUDY']
 
-const projects = [
-  { id: 1, image: '/images/projects/project-1.png', category: 'Website' },
-  { id: 2, image: '/images/projects/project-2.png', category: 'Website' },
-  { id: 3, image: '/images/projects/project-3.png', category: 'Mobile' },
-  { id: 4, image: '/images/projects/project-4.png', category: 'Website' },
-  { id: 5, image: '/images/projects/project-5.png', category: 'Mobile' },
-  { id: 6, image: '/images/projects/project-6.png', category: 'Case study' },
-  { id: 7, image: '/images/projects/project-7.png', category: 'Website' },
-  { id: 8, image: '/images/projects/project-8.png', category: 'Mobile' },
-  { id: 9, image: '/images/projects/project-9.png', category: 'Website' },
+const projects: Project[] = [
+  {
+    id: 1,
+    image: '/images/projects/project-1.png',
+    category: 'WEBSITE',
+    year: '2026',
+    name: 'SHB Finance redesign',
+    description: 'Coming soon...',
+    actions: [
+      { label: 'Preview', active: false },
+      { label: 'Link Figma', active: false },
+      { label: 'Case Study', active: false },
+    ],
+  },
+  {
+    id: 2,
+    image: '/images/projects/project-2.png',
+    category: 'CASE STUDY',
+    year: '2025',
+    name: 'Sendo Farm',
+    description: 'Solving business challenges, addressing user problems, and building habit-forming strategies.',
+    actions: [
+      { label: 'Preview', active: false },
+      { label: 'Link Figma', active: false },
+      { label: 'Case Study', active: true },
+    ],
+  },
+  {
+    id: 3,
+    image: '/images/projects/project-3.png',
+    category: 'CASE STUDY',
+    year: '2024',
+    name: 'Quizlet',
+    description: 'Helping busy learners review and retain knowledge effectively based on their personal needs.',
+    actions: [
+      { label: 'Preview', active: false },
+      { label: 'Link Figma', active: false },
+      { label: 'Case Study', active: true },
+    ],
+  },
+  {
+    id: 4,
+    image: '/images/projects/project-4.png',
+    category: 'WEBSITE',
+    year: '2024',
+    name: 'Innovator Academy',
+    description: 'Online learning platform designed to deliver an intuitive and engaging educational experience.',
+    actions: [
+      { label: 'Preview', active: true },
+      { label: 'Link Figma', active: true },
+      { label: 'Case Study', active: false },
+    ],
+  },
+  {
+    id: 5,
+    image: '/images/projects/project-5.png',
+    category: 'WEBSITE',
+    year: '2023',
+    name: 'eHighway',
+    description: 'E-commerce theme management platform designed for entrepreneurs selling to international markets',
+    actions: [
+      { label: 'Preview', active: false },
+      { label: 'Link Figma', active: true },
+      { label: 'Case Study', active: false },
+    ],
+  },
+  {
+    id: 6,
+    image: '/images/projects/project-6.png',
+    category: 'MOBILE APP',
+    year: '2022',
+    name: 'Vietjet Mobile App',
+    description: 'In-flight food ordering app for Vietjet focused on intuitive interaction and seamless passenger experience',
+    actions: [
+      { label: 'Preview', active: false },
+      { label: 'Link Figma', active: true },
+      { label: 'Case Study', active: false },
+    ],
+  },
+  {
+    id: 7,
+    image: '/images/projects/project-7.png',
+    category: 'MOBILE APP',
+    year: '2022',
+    name: 'Spo Mobile App',
+    description: 'Internal mobile application for FPT employees focused on usability and workflow efficiency',
+    actions: [
+      { label: 'Preview', active: false },
+      { label: 'Link Figma', active: true },
+      { label: 'Case Study', active: false },
+    ],
+  },
+  {
+    id: 8,
+    image: '/images/projects/project-8.png',
+    category: 'MOBILE APP',
+    year: '2022',
+    name: 'VnPost Mobile App',
+    description: 'Mobile app design for VNPost focused on intuitive interaction and seamless user experience',
+    actions: [
+      { label: 'Preview', active: false },
+      { label: 'Link Figma', active: true },
+      { label: 'Case Study', active: false },
+    ],
+  },
+  {
+    id: 9,
+    image: '/images/projects/project-9.png',
+    category: 'WEBSITE',
+    year: '2022',
+    name: 'eTradevn',
+    description: 'Focusing on user experience, clear information architecture, and a modern interface system.',
+    actions: [
+      { label: 'Preview', active: false },
+      { label: 'Link Figma', active: true },
+      { label: 'Case Study', active: false },
+    ],
+  },
+  {
+    id: 10,
+    image: '/images/projects/project-10.png',
+    category: 'WEBSITE',
+    year: '2021',
+    name: 'Chronos Website',
+    description: 'Website project for a watch and jewelry brand featuring a minimalist, modern, and aesthetically refined design.',
+    actions: [
+      { label: 'Preview', active: false },
+      { label: 'Link Figma', active: true },
+      { label: 'Case Study', active: false },
+    ],
+  },
 ]
 
 const filteredProjects = computed(() => {
@@ -51,7 +187,7 @@ const filteredProjects = computed(() => {
 
     <!-- Projects Section -->
     <section class="px-4 lg:px-0">
-      <div class="max-w-[1080px] mx-auto py-6 lg:py-[100px] lg:pb-[200px]">
+      <div class="max-w-[1080px] mx-auto py-6 pb-16 lg:py-[100px] lg:pb-[200px]">
         <div class="flex flex-col gap-6">
           <!-- Title -->
           <h2 class="text-[32px] font-bold leading-[1.25] text-[#2A2A2A]">My Project</h2>
@@ -80,20 +216,25 @@ const filteredProjects = computed(() => {
             >
               <img
                 :src="project.image"
-                :alt="`Project ${project.id}`"
+                :alt="project.name"
                 class="w-full h-[262px] lg:h-[366px] object-cover"
               />
               <!-- Hover overlay (desktop) -->
               <div class="absolute inset-0 bg-white/84 opacity-0 group-hover:opacity-100 transition-opacity duration-200 hidden lg:flex flex-col justify-between p-16 pb-10">
                 <div class="flex flex-col gap-3">
-                  <span class="text-sm text-[#404040]">2023</span>
-                  <h3 class="text-[26px] font-semibold leading-[1.54] text-black">Project Name</h3>
-                  <p class="text-base leading-[1.5] text-[#404040]">Content</p>
+                  <span class="text-sm leading-[1.43] text-[#404040]">{{ project.year }}</span>
+                  <h3 class="text-[26px] font-semibold leading-[1.54] text-black">{{ project.name }}</h3>
+                  <p class="text-base leading-[1.5] text-[#404040]">{{ project.description }}</p>
                 </div>
-                <div class="flex gap-3">
-                  <span class="inline-flex items-center justify-center h-6 px-3 bg-[#2A2A2A] rounded-full text-[10px] font-medium text-white">Preview</span>
-                  <span class="inline-flex items-center justify-center h-6 px-3 bg-[#2A2A2A] rounded-full text-[10px] font-medium text-white">Link Figma</span>
-                  <span class="inline-flex items-center justify-center h-6 px-3 bg-[#2A2A2A]/50 rounded-full text-[10px] font-medium text-white">Case Study</span>
+                <div class="flex gap-2">
+                  <span
+                    v-for="action in project.actions"
+                    :key="action.label"
+                    class="inline-flex items-center justify-center h-8 px-4 rounded-full text-xs font-medium text-white"
+                    :class="action.active ? 'bg-[#2A2A2A]' : 'bg-[#2A2A2A]/50'"
+                  >
+                    {{ action.label }}
+                  </span>
                 </div>
               </div>
             </div>

@@ -17,18 +17,18 @@ const scrollToTop = () => {
     <div class="max-w-[1080px] mx-auto px-4 lg:px-0 py-10">
       <!-- Desktop -->
       <div class="hidden lg:flex items-center justify-between">
-        <p class="text-[15.8px] text-[#7F7F7F]">&copy; 2026 Portfolio's Hyu</p>
+        <p class="text-sm text-[#7F7F7F]">&copy; 2026 Portfolio's Hyu</p>
         <div class="flex items-center gap-6">
-          <a href="#" class="text-base text-[#7F7F7F] hover:text-[#333] transition-colors">About</a>
-          <a href="#" class="text-base text-[#7F7F7F] hover:text-[#333] transition-colors">Learn</a>
-          <a href="#" class="text-base text-[#7F7F7F] hover:text-[#333] transition-colors">Portfolio</a>
-          <a href="#" class="text-base text-[#7F7F7F] hover:text-[#333] transition-colors">Contact</a>
+          <a href="#" class="text-sm text-[#7F7F7F] hover:text-[#333] transition-colors">About</a>
+          <a href="#" class="text-sm text-[#7F7F7F] hover:text-[#333] transition-colors">Learn</a>
+          <a href="#" class="text-sm text-[#7F7F7F] hover:text-[#333] transition-colors">Portfolio</a>
+          <a href="#" class="text-sm text-[#7F7F7F] hover:text-[#333] transition-colors">Contact</a>
         </div>
       </div>
 
       <!-- Mobile -->
       <div class="lg:hidden flex flex-col items-center">
-        <p class="text-[15.8px] text-[#7F7F7F]">&copy; 2026 Portfolio's Hyu</p>
+        <p class="text-sm text-[#7F7F7F]">&copy; 2026 Portfolio's Hyu</p>
       </div>
     </div>
   </footer>
