@@ -1,52 +1,47 @@
 <script setup lang="ts">
+const route = useRoute()
 const showMobileMenu = ref(false)
 
 const navItems = [
-  { label: 'Portfolio', href: '#' },
-  { label: 'About', href: '#' },
-  { label: 'Learn', href: '#' },
-  { label: 'Contact', href: '#' },
+  { label: 'Portfolio', href: '/' },
+  { label: 'About', href: '/about' },
 ]
 </script>
 
 <template>
   <header class="w-full bg-[#111111]">
-    <div class="max-w-[1080px] mx-auto px-4 lg:px-0 flex items-center justify-between h-[80px]">
-      <!-- Logo -->
-      <a href="/" class="block w-12 h-12">
-        <img src="/images/logo.svg" alt="Hyu Logo" class="w-12 h-12" />
+    <div class="max-w-[1080px] mx-auto px-4 lg:px-0 py-3 lg:py-4 flex items-center justify-between">
+      <a href="/" class="block w-10 h-10 lg:w-12 lg:h-12">
+        <img src="/images/logo.svg" alt="Hyu Logo" class="w-full h-full" />
       </a>
 
-      <!-- Desktop Nav -->
       <nav class="hidden lg:flex items-center">
         <ul class="flex gap-4">
           <li v-for="item in navItems" :key="item.label">
-            <a
-              :href="item.href"
-              class="px-4 text-base leading-[1.5] text-center transition-colors"
-              :class="item.label === 'Portfolio' ? 'text-[#7F7F7F]' : 'text-white'"
+            <NuxtLink
+              :to="item.href"
+              class="px-4 text-base leading-6 text-center transition-colors"
+              :class="route.path === item.href ? 'text-white' : 'text-[#7F7F7F]'"
             >
               {{ item.label }}
-            </a>
+            </NuxtLink>
           </li>
         </ul>
       </nav>
 
-      <!-- Mobile Menu Button -->
       <button
-        class="lg:hidden w-12 h-12 flex items-center justify-center"
+        class="lg:hidden w-10 h-10 flex items-center justify-center"
         aria-label="Toggle menu"
         @click="showMobileMenu = !showMobileMenu"
       >
-        <svg width="23" height="19" viewBox="0 0 23 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect y="0" width="23" height="3" rx="1.5" fill="white"/>
-          <rect y="8" width="23" height="3" rx="1.5" fill="white"/>
-          <rect y="16" width="23" height="3" rx="1.5" fill="white"/>
+        <svg width="32" height="26" viewBox="0 0 32 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect y="0" width="32" height="3" rx="1.5" fill="white"/>
+          <rect y="11.5" width="32" height="3" rx="1.5" fill="white"/>
+          <rect y="23" width="32" height="3" rx="1.5" fill="white"/>
         </svg>
       </button>
     </div>
 
-    <!-- Mobile Menu -->
     <div
       class="lg:hidden bg-[#111111] overflow-hidden transition-all duration-300 ease-in-out"
       :style="{
@@ -56,16 +51,16 @@ const navItems = [
       }"
     >
       <div class="px-4 pb-4">
-        <a
+        <NuxtLink
           v-for="item in navItems"
           :key="item.label"
-          :href="item.href"
+          :to="item.href"
           class="block py-3 text-lg text-white transition-transform duration-300"
           :style="{ transform: showMobileMenu ? 'translateY(0)' : 'translateY(-8px)' }"
           @click="showMobileMenu = false"
         >
           {{ item.label }}
-        </a>
+        </NuxtLink>
       </div>
     </div>
   </header>
