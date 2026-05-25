@@ -77,7 +77,7 @@ const projects: Project[] = [
   {
     id: 5,
     image: '/images/projects/project-10.png',
-    category: 'WEBSITE',
+    category: 'MOBILE APP ',
     year: '2024',
     name: 'CHRM',
     description: 'An internal employee app for payroll management, leave requests, holiday gift registration, and company retreat booking...',
@@ -165,7 +165,7 @@ const projects: Project[] = [
     description: 'In-flight food ordering app for Vietjet focused on intuitive interaction and seamless passenger experience',
     actions: [
       { label: 'Preview', link: '', active: false },
-      { label: 'Link Figma', link: 'https://www.figma.com/design/eJN6IGcYzRIgSxJDXBdOBp/Spro-mobile--GD-?node-id=0-1&t=Mf43NkLy9Yfa2N2D-1', active: true },
+      { label: 'Link Figma', link: 'https://www.figma.com/design/hN4MJQSDTYD2bJosQr5kB5/Vietjet-Air--Public-?node-id=17639-391811&t=lJh0nHCMk5DpXC8U-1', active: true },
       { label: 'Case Study', link: '', active: false },
     ],
   },
@@ -178,7 +178,7 @@ const projects: Project[] = [
     description: 'Focusing on user experience, clear information architecture, and a modern interface system.',
     actions: [
       { label: 'Preview', link: '', active: false },
-      { label: 'Link Figma', link: 'https://www.figma.com/design/8vD20IwQAfpFQmo9n6N2uG/Web-Chronos?node-id=101-2&t=AWqPisXgMe0uuJqJ-1', active: true },
+      { label: 'Link Figma', link: 'https://www.figma.com/design/NLa8Obya1wEErhmQVa9M2B/LC-Website--Public-?node-id=2339-36467&t=eZidVVPSYbniVeEH-1', active: true },
       { label: 'Case Study', link: '', active: false },
     ],
   },
@@ -191,7 +191,7 @@ const projects: Project[] = [
     description: 'Website project for a watch and jewelry brand featuring a minimalist, modern, and aesthetically refined design.',
     actions: [
       { label: 'Preview', link: '', active: false },
-      { label: 'Link Figma', link: 'https://www.figma.com/design/hvuozAjzZ0v8HVLS6QxGIo/Evo-Gaming-Demo?node-id=33-101&t=G1AhM0uBowH0vsjk-1', active: true },
+      { label: 'Link Figma', link: 'https://www.figma.com/design/8vD20IwQAfpFQmo9n6N2uG/Web-Chronos?node-id=101-2&t=AWqPisXgMe0uuJqJ-1', active: true },
       { label: 'Case Study', link: '', active: false },
     ],
   },

@@ -82,7 +82,7 @@ const educations = [
           <!-- Left Column -->
           <div class="flex flex-col gap-12 flex-1">
             <!-- Content -->
-            <div class="flex flex-col gap-6">
+            <div class="flex flex-col gap-4">
               <h1
                 class="text-[40px] lg:text-[60px] font-bold leading-[1.8] lg:leading-[1.2] tracking-[-0.02em] text-[#111827]">
                 Hi, I'm Huy Dang
@@ -127,16 +127,8 @@ const educations = [
 
             <!-- Download CV Button -->
             <a href="/CV.pdf" download="HuyDang_CV.pdf" target="_blank"
-              class="inline-flex items-center justify-center gap-2 h-12 px-6 bg-[#2A2A2A] text-white text-base font-medium rounded-[4px] w-full lg:w-auto">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9 11V17L11 15" stroke="white" stroke-width="1.5" stroke-linecap="round"
-                  stroke-linejoin="round" />
-                <path d="M9 17L7 15" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M22 10V15C22 20 20 22 15 22H9C4 22 2 20 2 15V9C2 4 4 2 9 2H14" stroke="white"
-                  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M22 10H18C15 10 14 9 14 6V2L22 10Z" stroke="white" stroke-width="1.5" stroke-linecap="round"
-                  stroke-linejoin="round" />
-              </svg>
+              class="inline-flex items-center justify-center gap-2 h-12 px-6 bg-[#2A2A2A] text-white text-base font-medium leading-6 rounded-[4px] w-fit">
+              <img src="/images/icons/icon-download.svg" alt="" width="24" height="24" />
               Download My CV
             </a>
           </div>
@@ -157,7 +149,7 @@ const educations = [
     <section class="border-b border-[#DDDDDD]">
       <div class="max-w-[1080px] mx-auto px-4 lg:px-0 py-16 lg:py-[100px] flex flex-col lg:flex-row gap-16">
         <!-- Left -->
-        <div class="flex flex-col gap-6 w-full lg:w-[402px] shrink-0">
+        <div class="flex flex-col gap-4 w-full lg:w-[402px] shrink-0">
           <div class="flex flex-col gap-4">
             <h2 class="text-[32px] font-bold leading-[1.25] text-black">My Experience</h2>
             <p class="text-base leading-[1.5] text-[#525252]">
@@ -165,14 +157,14 @@ const educations = [
               Please contact me!
             </p>
           </div>
-          <a href="#"
-            class="inline-flex items-center justify-center h-12 px-6 border border-[#2A2A2A] text-[#2A2A2A] text-base font-medium rounded-[4px] w-full lg:w-auto">
+          <a href="https://www.facebook.com/gabdol98/" target="_blank"
+            class="inline-flex items-center justify-center h-12 px-6 border border-[#2A2A2A] text-[#2A2A2A] text-base font-medium rounded-[4px] w-fit">
             Contact Me
           </a>
         </div>
 
         <!-- Right - Experience Items -->
-        <div class="flex flex-col gap-6 flex-1">
+        <div class="flex flex-col gap-4 flex-1">
           <div v-for="(exp, index) in experiences" :key="index"
             class="bg-[#F8F8F8] rounded-[4px] p-4 lg:p-6 cursor-pointer" @click="toggleExperience(index)">
             <div class="flex items-center justify-between gap-4">
@@ -203,19 +195,19 @@ const educations = [
     <!-- Education Section -->
     <section class="border-b border-[#DDDDDD]">
       <div class="max-w-[1080px] mx-auto px-4 lg:px-0 py-16 lg:py-[100px] flex flex-col gap-16">
-        <div class="flex gap-6">
+        <div class="flex gap-4">
           <h2 class="text-[32px] font-bold leading-[1.25] text-black text-left lg:text-center">Take a look at my
             Education
           </h2>
         </div>
 
-        <div class="flex flex-col lg:flex-row lg:flex-wrap gap-6">
+        <div class="flex flex-col lg:flex-row lg:flex-wrap gap-4">
           <div v-for="(edu, index) in educations" :key="index"
             class="bg-[#F8F8F8] rounded-[4px] p-4 lg:p-6 flex items-center justify-between w-full lg:w-[calc(50%-12px)]">
             <div class="flex flex-col gap-4 flex-1">
               <div class="flex items-center gap-4 flex-wrap">
                 <h3 class="text-xl lg:text-2xl font-bold uppercase tracking-[0.04em] text-[#404040]">{{ edu.institution
-                  }}
+                }}
                 </h3>
                 <span v-if="edu.tag"
                   class="inline-flex items-center px-3 py-[3px] rounded-[6px] text-xs text-[#28CD40] bg-[rgba(40,205,64,0.1)]">

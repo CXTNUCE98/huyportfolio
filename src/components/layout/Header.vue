@@ -9,7 +9,7 @@ const navItems = [
 </script>
 
 <template>
-  <header class="w-full bg-[#111111]">
+  <header class="sticky top-0 z-50 w-full bg-[#111111]">
     <div class="max-w-[1080px] mx-auto px-4 lg:px-0 py-3 lg:py-4 flex items-center justify-between">
       <a href="/" class="block w-10 h-10 lg:w-12 lg:h-12">
         <img src="/images/logo.svg" alt="Hyu Logo" class="w-full h-full" />
