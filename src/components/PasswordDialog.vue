@@ -12,6 +12,17 @@ const emit = defineEmits<{
   'update:digits': [digits: string[]]
 }>()
 
+const otpContainer = ref<HTMLElement | null>(null)
+
+watch(() => props.show, (val) => {
+  if (val) {
+    nextTick(() => {
+      const firstInput = otpContainer.value?.querySelector('input')
+      firstInput?.focus()
+    })
+  }
+})
+
 function onInput(index: number, event: Event) {
   const input = event.target as HTMLInputElement
   const value = input.value.replace(/\D/g, '')
@@ -31,6 +42,9 @@ function onKeydown(index: number, event: KeyboardEvent) {
     const inputs = input.closest('.otp-container')?.querySelectorAll('input')
     inputs?.[index - 1]?.focus()
   }
+  if (event.key === 'Enter' && props.digits.every(d => d)) {
+    emit('confirm')
+  }
 }
 
 function onPaste(event: ClipboardEvent) {
@@ -40,6 +54,10 @@ function onPaste(event: ClipboardEvent) {
   const newDigits = Array(6).fill('')
   chars.forEach((c, i) => { newDigits[i] = c })
   emit('update:digits', newDigits)
+}
+
+function getPassword() {
+  window.open('https://www.facebook.com/gabdol98/', '_blank')
 }
 </script>
 
@@ -75,7 +93,7 @@ function onPaste(event: ClipboardEvent) {
               <p class="text-sm text-[#525252]">This project is protected due to confidentiality.</p>
             </div>
 
-            <div class="otp-container flex gap-2" @paste="onPaste">
+            <div ref="otpContainer" class="otp-container flex gap-2" @paste="onPaste">
               <input v-for="(digit, index) in digits" :key="index" type="text" inputmode="numeric" maxlength="1"
                 :value="digit"
                 class="w-12 h-14 border rounded-md text-center text-[22px] outline-none transition-colors"
@@ -94,7 +112,8 @@ function onPaste(event: ClipboardEvent) {
               Confirm
             </button>
             <button type="button"
-              class="w-full h-10 rounded flex items-center justify-center text-sm font-medium bg-[#8E8E93]/10 text-[#404040] hover:bg-[#8E8E93]/20 transition-colors">
+              class="w-full h-10 rounded flex items-center justify-center text-sm font-medium bg-[#8E8E93]/10 text-[#404040] hover:bg-[#8E8E93]/20 transition-colors"
+              @click="getPassword">
               Get Password
             </button>
           </div>
