@@ -83,7 +83,7 @@ const projects: Project[] = [
     description: 'An internal employee app for payroll management, leave requests, holiday gift registration, and company retreat booking...',
     actions: [
       { label: 'Preview', link: '', active: false },
-      { label: 'Link Figma', link: 'https://www.figma.com/design/CHRM-placeholder', active: true },
+      { label: 'Link Figma', link: 'https://www.figma.com/design/CQwugvkVhfjCsqpLOuLyaW/App-H%E1%BB%93-s%C6%A1-%C4%91i%E1%BB%87n-t%E1%BB%AD-Ver3.0?node-id=6282-36122&t=VrpsBEAT86lUSeth-1', active: true },
       { label: 'Case Study', link: '', active: false },
     ],
     passwordProtected: true,
@@ -124,7 +124,7 @@ const projects: Project[] = [
     description: 'An all-in-one platform for shopping electronics, home appliances, smart home devices, and home maintenance services in a single app.',
     actions: [
       { label: 'Preview', link: '', active: false },
-      { label: 'Link Figma', link: '', active: true },
+      { label: 'Link Figma', link: 'https://www.figma.com/design/lDwQEbYp74V4fS8fEhJbt6/AIO-SUPER-APP?node-id=0-1&t=ECZFdnXbYOog78ra-1', active: true },
       { label: 'Case Study', link: '', active: false },
     ],
     passwordProtected: true,
