@@ -113,7 +113,6 @@ const projects: Project[] = [
       { label: 'Link Figma', link: 'https://www.figma.com/design/eJN6IGcYzRIgSxJDXBdOBp/Spro-mobile--GD-?node-id=0-1&t=Mf43NkLy9Yfa2N2D-1', active: true },
       { label: 'Case Study', link: '', active: false },
     ],
-    passwordProtected: true,
   },
 
   {

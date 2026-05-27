@@ -31,13 +31,24 @@ const experiences = [
     company: 'eHighway startup',
     period: '10/2022 - 06/2024',
     role: 'UIUX Designer',
-    description: [],
+    description: [
+      'Designed and maintained the e-commerce platform UI for international sellers and buyers.',
+      'Created user flows, wireframes, and high-fidelity prototypes for key features including product listing, checkout, and seller dashboard.',
+      'Worked closely with the development team to ensure pixel-perfect implementation.',
+      'Conducted usability testing and iterated on designs based on user feedback.',
+      'Contributed to building the product design system from scratch.',
+    ],
   },
   {
     company: 'FPT IS',
     period: '10/2021 - 06/2022',
     role: 'Fresser',
-    description: [],
+    description: [
+      'Participated in designing internal enterprise applications for FPT\'s clients.',
+      'Assisted senior designers in creating wireframes and UI mockups.',
+      'Learned and applied design system principles in real-world projects.',
+      'Collaborated with BAs and developers to understand requirements and deliver design solutions.',
+    ],
   },
 ]
 
@@ -176,16 +187,27 @@ const educations = [
                   <span class="text-sm lg:text-lg text-[#7F7F7F]">{{ exp.role }}</span>
                 </div>
               </div>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                class="shrink-0 transition-transform duration-300"
+                :class="expandedExperience === index ? 'rotate-180' : ''">
+                <path d="M6 9L12 15L18 9" stroke="#525252" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
             </div>
 
             <!-- Expanded content -->
-            <div v-if="expandedExperience === index && exp.description.length > 0"
-              class="mt-6 pt-4 border-t border-[#EAEAEA]">
-              <p class="text-lg lg:text-xl font-light leading-[1.7] text-[#525252]">
-                <template v-for="(line, i) in exp.description" :key="i">
-                  {{ line }}<br v-if="i < exp.description.length - 1" />
-                </template>
-              </p>
+            <div v-if="exp.description.length > 0"
+              class="grid transition-[grid-template-rows] duration-300 ease-in-out"
+              :class="expandedExperience === index ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'">
+              <div class="overflow-hidden">
+                <div class="mt-6 pt-4 border-t border-[#EAEAEA]">
+                  <p class="text-lg lg:text-xl font-light leading-[1.7] text-[#525252]">
+                    <template v-for="(line, i) in exp.description" :key="i">
+                      {{ line }}<br v-if="i < exp.description.length - 1" />
+                    </template>
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -222,11 +244,11 @@ const educations = [
             <button class="shrink-0 cursor-pointer" @click="openPreview(edu.image)">
               <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
-                  d="M18.1767 14.0002C18.1767 16.3069 16.3067 18.1769 14.0001 18.1769C11.6934 18.1769 9.82339 16.3069 9.82339 14.0002C9.82339 11.6936 11.6934 9.82361 14.0001 9.82361C16.3067 9.82361 18.1767 11.6936 18.1767 14.0002Z"
-                  stroke="#535353" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path
-                  d="M14.0001 23.6017C18.1301 23.6017 21.9801 21.2017 24.6167 17.2017C25.6667 15.5867 25.6667 12.4017 24.6167 10.7867C21.9801 6.78669 18.1301 4.38669 14.0001 4.38669C9.87006 4.38669 6.02006 6.78669 3.38339 10.7867C2.33339 12.4017 2.33339 15.5867 3.38339 17.2017C6.02006 21.2017 9.87006 23.6017 14.0001 23.6017Z"
-                  stroke="#535353" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  d="M14.0014 16.8148C15.5608 16.8148 16.8356 15.5477 16.8356 13.9978C16.8356 12.4366 15.5608 11.1696 14.0014 11.1696C13.8648 11.1696 13.7282 11.1809 13.603 11.2035C13.5575 12.4479 12.5331 13.4435 11.2697 13.4435H11.2128C11.1786 13.6245 11.1559 13.8055 11.1559 13.9978C11.1559 15.5477 12.4307 16.8148 14.0014 16.8148Z"
+                  fill="#7F7F7F" />
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M20.6927 7.05406C22.6846 8.59265 24.3805 10.844 25.5984 13.6609C25.6895 13.8759 25.6895 14.1248 25.5984 14.3284C23.1626 19.9623 18.8261 23.3337 14 23.3337H13.9887C9.17403 23.3337 4.83744 19.9623 2.40167 14.3284C2.31061 14.1248 2.31061 13.8759 2.40167 13.6609C4.83744 8.02699 9.17403 4.66699 13.9887 4.66699H14C16.413 4.66699 18.7009 5.50416 20.6927 7.05406ZM9.4472 14.0003C9.4472 16.4892 11.4846 18.5143 14 18.5143C16.5041 18.5143 18.5415 16.4892 18.5415 14.0003C18.5415 11.5001 16.5041 9.47507 14 9.47507C11.4846 9.47507 9.4472 11.5001 9.4472 14.0003Z"
+                  fill="#7F7F7F" />
               </svg>
             </button>
           </div>
