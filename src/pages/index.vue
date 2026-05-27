@@ -260,6 +260,8 @@ function closePasswordDialog() {
   showPasswordDialog.value = false
   pendingAction.value = null
 }
+
+useScrollReveal()
 </script>
 
 <template>
@@ -267,7 +269,7 @@ function closePasswordDialog() {
     <!-- Hero Section -->
     <section class="border-b border-[#DDDDDD]">
       <div class="max-w-[1080px] mx-auto px-4 lg:px-0 py-16 lg:py-[100px]">
-        <div class="flex flex-col gap-6">
+        <div class="flex flex-col gap-6 scroll-reveal">
           <!-- Portfolio Title SVG -->
           <img src="/images/portfolio-title.svg" alt="Portfolio." class="hidden lg:block w-[351px] h-[72px]" />
           <img src="/images/portfolio-title-mobile.svg" alt="Portfolio." class="lg:hidden w-[312px] h-[64px]" />
@@ -290,10 +292,10 @@ function closePasswordDialog() {
       <div class="max-w-[1080px] mx-auto py-6 pb-16 lg:py-[100px] lg:pb-[200px]">
         <div class="flex flex-col gap-6">
           <!-- Title -->
-          <h2 class="text-[32px] font-bold leading-[1.25] text-[#2A2A2A]">My Project</h2>
+          <h2 class="text-[32px] font-bold leading-[1.25] text-[#2A2A2A] scroll-reveal">My Project</h2>
 
           <!-- Tabs -->
-          <div class="flex gap-6">
+          <div class="flex gap-6 scroll-reveal" style="transition-delay: 100ms">
             <button v-for="tab in tabs" :key="tab"
               class="h-[44px] flex items-center justify-center text-sm font-medium leading-[1.43] transition-colors"
               :class="activeTab === tab
@@ -305,9 +307,12 @@ function closePasswordDialog() {
 
           <!-- Project Grid -->
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-            <ProjectCard v-for="project in filteredProjects" :key="project.id" :image="project.image"
-              :year="project.year" :name="project.name" :description="project.description" :actions="project.actions"
-              @action-click="handleActionClick(project, $event)" />
+            <div v-for="(project, index) in filteredProjects" :key="project.id" class="scroll-reveal"
+              :style="{ transitionDelay: `${index * 100}ms` }">
+              <ProjectCard :image="project.image" :year="project.year" :name="project.name"
+                :description="project.description" :actions="project.actions"
+                @action-click="handleActionClick(project, $event)" />
+            </div>
           </div>
         </div>
       </div>

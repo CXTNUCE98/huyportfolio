@@ -2,6 +2,8 @@
 const expandedExperience = ref<number | null>(0)
 const previewImage = ref<string | null>(null)
 
+useScrollReveal()
+
 function toggleExperience(index: number) {
   expandedExperience.value = expandedExperience.value === index ? null : index
 }
@@ -91,7 +93,7 @@ const educations = [
       <div class="max-w-[1080px] mx-auto px-4 lg:px-0 py-16 lg:py-[100px]">
         <div class="flex flex-col-reverse lg:flex-row lg:justify-between lg:items-end gap-12 lg:gap-12 flex-wrap">
           <!-- Left Column -->
-          <div class="flex flex-col gap-12 flex-1">
+          <div class="flex flex-col gap-12 flex-1 scroll-reveal">
             <!-- Content -->
             <div class="flex flex-col gap-4">
               <h1
@@ -145,7 +147,7 @@ const educations = [
           </div>
 
           <!-- Right Column - Profile Picture -->
-          <div class="relative w-full lg:w-[320px] h-[430px] lg:h-[360px] shrink-0">
+          <div class="relative w-full lg:w-[320px] h-[430px] lg:h-[360px] shrink-0 scroll-reveal" style="transition-delay: 150ms">
             <div
               class="absolute top-[48px] lg:top-[40px] left-[48px] lg:left-[40px] w-[calc(100%-48px)] lg:w-[280px] h-[382px] lg:h-[320px] bg-[#F8F8F8]">
             </div>
@@ -160,7 +162,7 @@ const educations = [
     <section class="border-b border-[#DDDDDD]">
       <div class="max-w-[1080px] mx-auto px-4 lg:px-0 py-16 lg:py-[100px] flex flex-col lg:flex-row gap-16">
         <!-- Left -->
-        <div class="flex flex-col gap-4 w-full lg:w-[402px] shrink-0">
+        <div class="flex flex-col gap-4 w-full lg:w-[402px] shrink-0 scroll-reveal">
           <div class="flex flex-col gap-4">
             <h2 class="text-[32px] font-bold leading-[1.25] text-black">My Experience</h2>
             <p class="text-base leading-[1.5] text-[#525252]">
@@ -177,7 +179,8 @@ const educations = [
         <!-- Right - Experience Items -->
         <div class="flex flex-col gap-4 flex-1">
           <div v-for="(exp, index) in experiences" :key="index"
-            class="bg-[#F8F8F8] rounded-[4px] p-4 lg:p-6 cursor-pointer" @click="toggleExperience(index)">
+            class="bg-[#F8F8F8] rounded-[4px] p-4 lg:p-6 cursor-pointer scroll-reveal"
+            :style="{ transitionDelay: `${index * 100}ms` }" @click="toggleExperience(index)">
             <div class="flex items-center justify-between gap-4">
               <div class="flex flex-col gap-4 flex-1">
                 <h3 class="text-xl lg:text-2xl font-bold uppercase tracking-[0.04em] text-[#404040]">{{ exp.company }}
@@ -217,7 +220,7 @@ const educations = [
     <!-- Education Section -->
     <section class="border-b border-[#DDDDDD]">
       <div class="max-w-[1080px] mx-auto px-4 lg:px-0 py-16 lg:py-[100px] flex flex-col gap-16">
-        <div class="flex gap-4">
+        <div class="flex gap-4 scroll-reveal">
           <h2 class="text-[32px] font-bold leading-[1.25] text-black text-left lg:text-center">Take a look at my
             Education
           </h2>
@@ -225,7 +228,8 @@ const educations = [
 
         <div class="flex flex-col lg:flex-row lg:flex-wrap gap-4">
           <div v-for="(edu, index) in educations" :key="index"
-            class="bg-[#F8F8F8] rounded-[4px] p-4 lg:p-6 flex items-center justify-between w-full lg:w-[calc(50%-12px)]">
+            class="bg-[#F8F8F8] rounded-[4px] p-4 lg:p-6 flex items-center justify-between w-full lg:w-[calc(50%-12px)] scroll-reveal"
+            :style="{ transitionDelay: `${index * 100}ms` }">
             <div class="flex flex-col gap-4 flex-1">
               <div class="flex items-center gap-4 flex-wrap">
                 <h3 class="text-xl lg:text-2xl font-bold uppercase tracking-[0.04em] text-[#404040]">{{ edu.institution
