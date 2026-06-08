@@ -34,11 +34,9 @@ const experiences = [
     period: '10/2022 - 06/2024',
     role: 'UIUX Designer',
     description: [
-      'Designed and maintained the e-commerce platform UI for international sellers and buyers.',
-      'Created user flows, wireframes, and high-fidelity prototypes for key features including product listing, checkout, and seller dashboard.',
-      'Worked closely with the development team to ensure pixel-perfect implementation.',
-      'Conducted usability testing and iterated on designs based on user feedback.',
-      'Contributed to building the product design system from scratch.',
+      'Contributed to the development of an e-commerce product for international markets in a startup environment.',
+      'Designed shopping experiences and optimized checkout flows to improve overall user experience.',
+      'Improved the product interface based on user feedback and business requirements.',
     ],
   },
   {
@@ -46,10 +44,9 @@ const experiences = [
     period: '10/2021 - 06/2022',
     role: 'Fresser',
     description: [
-      'Participated in designing internal enterprise applications for FPT\'s clients.',
-      'Assisted senior designers in creating wireframes and UI mockups.',
-      'Learned and applied design system principles in real-world projects.',
-      'Collaborated with BAs and developers to understand requirements and deliver design solutions.',
+      'Gained hands-on experience with Design Systems and contributed to building and maintaining them throughout the product development process.',
+      'Supported the creation of wireframes, mockups, and prototypes using Figma.',
+      'Had the opportunity to contribute to several large-scale projects such as VNPost and Spro.',
     ],
   },
 ]
@@ -140,7 +137,7 @@ const educations = [
 
             <!-- Download CV Button -->
             <a href="/CV.pdf" download="HuyDang_CV.pdf" target="_blank"
-              class="inline-flex items-center justify-center gap-2 h-12 px-6 bg-[#2A2A2A] text-white text-base font-medium leading-6 rounded-[4px] w-fit">
+              class="inline-flex items-center justify-center gap-2 h-12 px-6 bg-[#2A2A2A] text-white text-base font-medium leading-6 rounded-[4px] w-full lg:w-fit">
               <img src="/images/icons/icon-download.svg" alt="" width="24" height="24" />
               Download My CV
             </a>
@@ -162,7 +159,7 @@ const educations = [
     <section class="border-b border-[#DDDDDD]">
       <div class="max-w-[1080px] mx-auto px-4 lg:px-0 py-16 lg:py-[100px] flex flex-col lg:flex-row gap-16">
         <!-- Left -->
-        <div class="flex flex-col gap-4 w-full lg:w-[402px] shrink-0 scroll-reveal">
+        <div class="flex flex-col gap-6 w-full lg:w-[402px] shrink-0 scroll-reveal">
           <div class="flex flex-col gap-4">
             <h2 class="text-[32px] font-bold leading-[1.25] text-black">My Experience</h2>
             <p class="text-base leading-[1.5] text-[#525252]">
@@ -171,30 +168,35 @@ const educations = [
             </p>
           </div>
           <a href="https://www.facebook.com/gabdol98/" target="_blank"
-            class="inline-flex items-center justify-center h-12 px-6 border border-[#2A2A2A] text-[#2A2A2A] text-base font-medium rounded-[4px] w-fit">
+            class="inline-flex items-center justify-center h-12 px-6 border border-[#2A2A2A] text-[#2A2A2A] text-base font-medium rounded-[4px] w-full lg:w-fit">
             Contact Me
           </a>
         </div>
 
         <!-- Right - Experience Items -->
-        <div class="flex flex-col gap-4 flex-1">
+        <div class="flex flex-col gap-4 lg:gap-6 flex-1">
           <div v-for="(exp, index) in experiences" :key="index"
             class="bg-[#F8F8F8] rounded-[4px] p-4 lg:p-6 cursor-pointer scroll-reveal"
             :style="{ transitionDelay: `${index * 100}ms` }" @click="toggleExperience(index)">
-            <div class="flex items-center justify-between gap-4">
-              <div class="flex flex-col gap-4 flex-1">
-                <h3 class="text-xl lg:text-2xl font-bold uppercase tracking-[0.04em] text-[#404040]">{{ exp.company }}
-                </h3>
-                <div class="flex flex-wrap gap-2">
-                  <span class="text-sm lg:text-lg text-[#7F7F7F]">{{ exp.period }}</span>
-                  <span class="text-sm lg:text-lg text-[#7F7F7F]">{{ exp.role }}</span>
+            <div class="flex items-center justify-between gap-4"
+              :class="expandedExperience === index ? 'pb-4 border-b border-[#EAEAEA]' : ''">
+              <div class="flex flex-col gap-2">
+                <h3 class="text-xl font-bold uppercase tracking-[0.04em] text-[#404040]">{{ exp.company }}</h3>
+                <div class="flex items-center gap-2">
+                  <span class="text-sm text-[#7F7F7F]">{{ exp.period }}</span>
+                  <span class="text-sm text-[#7F7F7F]">•</span>
+                  <span class="text-sm text-[#7F7F7F]">{{ exp.role }}</span>
                 </div>
               </div>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-                class="shrink-0 transition-transform duration-300"
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"
+                class="shrink-0 transition-transform duration-300 hidden lg:block"
                 :class="expandedExperience === index ? 'rotate-180' : ''">
-                <path d="M6 9L12 15L18 9" stroke="#525252" stroke-width="1.5" stroke-linecap="round"
-                  stroke-linejoin="round" />
+                <path d="M6.81 16.13L12.6 10.34C13.37 9.57 14.63 9.57 15.4 10.34L21.19 16.13" fill="#535353" />
+              </svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                class="shrink-0 transition-transform duration-300 lg:hidden"
+                :class="expandedExperience === index ? 'rotate-180' : ''">
+                <path d="M5.84 13.82L10.8 8.86C11.46 8.2 12.54 8.2 13.2 8.86L18.16 13.82" fill="#535353" />
               </svg>
             </div>
 
@@ -203,13 +205,9 @@ const educations = [
               class="grid transition-[grid-template-rows] duration-300 ease-in-out"
               :class="expandedExperience === index ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'">
               <div class="overflow-hidden">
-                <div class="mt-6 pt-4 border-t border-[#EAEAEA]">
-                  <p class="text-lg lg:text-xl font-light leading-[1.7] text-[#525252]">
-                    <template v-for="(line, i) in exp.description" :key="i">
-                      {{ line }}<br v-if="i < exp.description.length - 1" />
-                    </template>
-                  </p>
-                </div>
+                <ul class="pt-6 text-base leading-[1.5] text-[#525252] list-disc pl-5 space-y-1">
+                  <li v-for="(line, i) in exp.description" :key="i">{{ line }}</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -221,14 +219,14 @@ const educations = [
     <section class="border-b border-[#DDDDDD]">
       <div class="max-w-[1080px] mx-auto px-4 lg:px-0 py-16 lg:py-[100px] flex flex-col gap-16">
         <div class="flex gap-4 scroll-reveal">
-          <h2 class="text-[32px] font-bold leading-[1.25] text-black text-left lg:text-center">Take a look at my
+          <h2 class="text-[32px] font-bold leading-[1.25] text-black text-left">Take a look at my
             Education
           </h2>
         </div>
 
         <div class="flex flex-col lg:flex-row lg:flex-wrap gap-4">
           <div v-for="(edu, index) in educations" :key="index"
-            class="bg-[#F8F8F8] rounded-[4px] p-4 lg:p-6 flex items-center justify-between w-full lg:w-[calc(50%-12px)] scroll-reveal"
+            class="bg-[#F8F8F8] rounded-[4px] py-6 px-4 lg:p-6 flex items-center justify-between w-full lg:w-[calc(50%-12px)] scroll-reveal"
             :style="{ transitionDelay: `${index * 100}ms` }">
             <div class="flex flex-col gap-4 flex-1">
               <div class="flex items-center gap-4 flex-wrap">

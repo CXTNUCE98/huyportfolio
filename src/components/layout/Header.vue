@@ -21,7 +21,7 @@ const navItems = [
             <NuxtLink
               :to="item.href"
               class="px-4 text-base leading-6 text-center transition-colors"
-              :class="route.path === item.href ? 'text-white' : 'text-[#7F7F7F]'"
+              :class="route.path === item.href ? 'text-[#7F7F7F]' : 'text-white'"
             >
               {{ item.label }}
             </NuxtLink>

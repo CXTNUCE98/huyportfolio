@@ -69,7 +69,7 @@ const projects: Project[] = [
     name: 'Innovator Academy',
     description: 'Online learning platform designed to deliver an intuitive and engaging educational experience.',
     actions: [
-      { label: 'Preview', link: '', active: true },
+      { label: 'Preview', link: 'https://innovator-iota.vercel.app/', active: true },
       { label: 'Link Figma', link: 'https://www.figma.com/design/weBC3oa7sb5qZHAzm1SQ9i/Innovator-Website-Ver-Final?node-id=48978-46043&t=kffqsFJ5gMYYFBPJ-1', active: true },
       { label: 'Case Study', link: '', active: false },
     ],
@@ -77,7 +77,7 @@ const projects: Project[] = [
   {
     id: 5,
     image: '/images/projects/project-10.png',
-    category: 'MOBILE APP ',
+    category: 'MOBILE APP',
     year: '2024',
     name: 'CHRM',
     description: 'An internal employee app for payroll management, leave requests, holiday gift registration, and company retreat booking...',
@@ -88,33 +88,33 @@ const projects: Project[] = [
     ],
     passwordProtected: true,
   },
-  {
-    id: 6,
-    image: '/images/projects/project-6.png',
-    category: 'WEBSITE',
-    year: '2024',
-    name: 'Bdesign',
-    description: 'A fashion brand website for showcasing and selling women\'s clothing collections with a modern and elegant shopping experience.',
-    actions: [
-      { label: 'Preview', link: 'https://bapwdesign.vercel.app/', active: true },
-      { label: 'Link Figma', link: 'https://www.figma.com/design/mBQAH7ltUWCzJlEtIH86g3/B-Design-Demo?node-id=1-5&t=DFSxbMeWdxOV10E2-1', active: true },
-      { label: 'Case Study', link: '', active: false },
-    ],
-  },
-  {
-    id: 7,
-    image: '/images/projects/project-7.png',
-    category: 'MOBILE APP',
-    year: '2024',
-    name: 'Super App AIO',
-    description: 'Internal mobile application for FPT employees focused on usability and workflow efficiency',
-    actions: [
-      { label: 'Preview', link: '', active: false },
-      { label: 'Link Figma', link: 'https://www.figma.com/design/eJN6IGcYzRIgSxJDXBdOBp/Spro-mobile--GD-?node-id=0-1&t=Mf43NkLy9Yfa2N2D-1', active: true },
-      { label: 'Case Study', link: '', active: false },
-    ],
-  },
-
+  // {
+  //   id: 6,
+  //   image: '/images/projects/project-6.png',
+  //   category: 'WEBSITE',
+  //   year: '2024',
+  //   name: 'Bdesign',
+  //   description: 'A fashion brand website for showcasing and selling women\'s clothing collections with a modern and elegant shopping experience.',
+  //   actions: [
+  //     { label: 'Preview', link: 'https://bapwdesign.vercel.app/', active: true },
+  //     { label: 'Link Figma', link: 'https://www.figma.com/design/mBQAH7ltUWCzJlEtIH86g3/B-Design-Demo?node-id=1-5&t=DFSxbMeWdxOV10E2-1', active: true },
+  //     { label: 'Case Study', link: '', active: false },
+  //   ],
+  // },
+  // {
+  //   id: 7,
+  //   image: '/images/projects/project-7.png',
+  //   category: 'MOBILE APP',
+  //   year: '2024',
+  //   name: 'Super App AIO',
+  //   description: 'Internal mobile application for FPT employees focused on usability and workflow efficiency',
+  //   actions: [
+  //     { label: 'Preview', link: '', active: false },
+  //     { label: 'Link Figma', link: 'https://www.figma.com/design/eJN6IGcYzRIgSxJDXBdOBp/Spro-mobile--GD-?node-id=0-1&t=Mf43NkLy9Yfa2N2D-1', active: true },
+  //     { label: 'Case Study', link: '', active: false },
+  //   ],
+  //   passwordProtected: true,
+  // },
   {
     id: 8,
     image: '/images/projects/project-12.png',
@@ -129,19 +129,19 @@ const projects: Project[] = [
     ],
     passwordProtected: true,
   },
-  {
-    id: 9,
-    image: '/images/projects/project-5.png',
-    category: 'WEBSITE',
-    year: '2023',
-    name: 'eHighway',
-    description: 'E-commerce theme management platform designed for entrepreneurs selling to international markets',
-    actions: [
-      { label: 'Preview', link: '', active: false },
-      { label: 'Link Figma', link: 'https://www.figma.com/design/5AioPT6MCFF3KaUQ052lfL/eHighway?node-id=4703-96208&t=8i7x7K8R9OVFMIrr-1', active: true },
-      { label: 'Case Study', link: '', active: false },
-    ],
-  },
+  // {
+  //   id: 9,
+  //   image: '/images/projects/project-5.png',
+  //   category: 'WEBSITE',
+  //   year: '2023',
+  //   name: 'eHighway',
+  //   description: 'E-commerce theme management platform designed for entrepreneurs selling to international markets',
+  //   actions: [
+  //     { label: 'Preview', link: '', active: false },
+  //     { label: 'Link Figma', link: 'https://www.figma.com/design/5AioPT6MCFF3KaUQ052lfL/eHighway?node-id=4703-96208&t=8i7x7K8R9OVFMIrr-1', active: true },
+  //     { label: 'Case Study', link: '', active: false },
+  //   ],
+  // },
   {
     id: 10,
     image: '/images/projects/project-8.png',
@@ -181,33 +181,32 @@ const projects: Project[] = [
       { label: 'Case Study', link: '', active: false },
     ],
   },
-  {
-    id: 13,
-    image: '/images/projects/project-13.png',
-    category: 'WEBSITE',
-    year: '2021',
-    name: 'Chronos Website',
-    description: 'Website project for a watch and jewelry brand featuring a minimalist, modern, and aesthetically refined design.',
-    actions: [
-      { label: 'Preview', link: '', active: false },
-      { label: 'Link Figma', link: 'https://www.figma.com/design/8vD20IwQAfpFQmo9n6N2uG/Web-Chronos?node-id=101-2&t=AWqPisXgMe0uuJqJ-1', active: true },
-      { label: 'Case Study', link: '', active: false },
-    ],
-  },
-  {
-    id: 14,
-    image: '/images/projects/project-14.png',
-    category: 'WEBSITE',
-    year: '2026',
-    name: 'Evo Gaming',
-    description: 'A gaming e-commerce platform for buying discounted games, game accounts, and digital gaming products.',
-    actions: [
-      { label: 'Preview', link: 'https://evo-gaming.vercel.app/', active: true },
-      { label: 'Link Figma', link: 'https://www.figma.com/design/hvuozAjzZ0v8HVLS6QxGIo/Evo-Gaming-Demo?node-id=33-101&t=G1AhM0uBowH0vsjk-1', active: true },
-      { label: 'Case Study', link: '', active: false },
-    ],
-  },
-
+  // {
+  //   id: 13,
+  //   image: '/images/projects/project-13.png',
+  //   category: 'WEBSITE',
+  //   year: '2021',
+  //   name: 'Chronos Website',
+  //   description: 'Website project for a watch and jewelry brand featuring a minimalist, modern, and aesthetically refined design.',
+  //   actions: [
+  //     { label: 'Preview', link: '', active: false },
+  //     { label: 'Link Figma', link: 'https://www.figma.com/design/8vD20IwQAfpFQmo9n6N2uG/Web-Chronos?node-id=101-2&t=AWqPisXgMe0uuJqJ-1', active: true },
+  //     { label: 'Case Study', link: '', active: false },
+  //   ],
+  // },
+  // {
+  //   id: 14,
+  //   image: '/images/projects/project-14.png',
+  //   category: 'WEBSITE',
+  //   year: '2026',
+  //   name: 'Evo Gaming',
+  //  description: 'A gaming e-commerce platform for buying discounted games, game accounts, and digital gaming products.',
+  //  actions: [
+  //    { label: 'Preview', link: 'https://evo-gaming.vercel.app/', active: true },
+  //    { label: 'Link Figma', link: 'https://www.figma.com/design/hvuozAjzZ0v8HVLS6QxGIo/Evo-Gaming-Demo?node-id=33-101&t=G1AhM0uBowH0vsjk-1', active: true },
+  //    { label: 'Case Study', link: '', active: false },
+  //  ],
+  // },
 ]
 
 const filteredProjects = computed(() => {
