@@ -30,7 +30,7 @@ const projects: Project[] = [
     name: 'SHB Finance redesign',
     description: 'Coming soon...',
     actions: [
-      { label: 'Preview', active: false },
+      // { label: 'Preview', active: false },
       { label: 'Link Figma', active: false },
       { label: 'Case Study', active: false },
     ],
@@ -43,7 +43,7 @@ const projects: Project[] = [
     name: 'Sendo Farm',
     description: 'Solving business challenges, addressing user problems, and building habit-forming strategies.',
     actions: [
-      { label: 'Preview', link: '', active: false },
+      // { label: 'Preview', link: '', active: false },
       { label: 'Link Figma', link: '', active: false },
       { label: 'Case Study', link: 'https://uxfoundation.vn/case-study/sendo-farm-brings-produce-from-the-farm-to-your-kitchen', active: true },
     ],
@@ -56,7 +56,7 @@ const projects: Project[] = [
     name: 'Quizlet',
     description: 'Helping busy learners review and retain knowledge effectively based on their personal needs.',
     actions: [
-      { label: 'Preview', link: '', active: false },
+      // { label: 'Preview', link: '', active: false },
       { label: 'Link Figma', link: '', active: false },
       { label: 'Case Study', link: 'https://www.figma.com/deck/2cJs9MSkmBu9PPccSZtnTQ/Team-3-H2Q?node-id=97-473&viewport=-240%2C-215%2C1.07&t=6XFB5tNNDtPWkuzE-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1', active: true },
     ],
@@ -69,7 +69,7 @@ const projects: Project[] = [
     name: 'Innovator Academy',
     description: 'Online learning platform designed to deliver an intuitive and engaging educational experience.',
     actions: [
-      { label: 'Preview', link: 'https://innovator-iota.vercel.app/', active: true },
+      // { label: 'Preview', link: 'https://innovator-iota.vercel.app/', active: true },
       { label: 'Link Figma', link: 'https://www.figma.com/design/weBC3oa7sb5qZHAzm1SQ9i/Innovator-Website-Ver-Final?node-id=48978-46043&t=kffqsFJ5gMYYFBPJ-1', active: true },
       { label: 'Case Study', link: '', active: false },
     ],
@@ -82,7 +82,7 @@ const projects: Project[] = [
     name: 'CHRM',
     description: 'An internal employee app for payroll management, leave requests, holiday gift registration, and company retreat booking...',
     actions: [
-      { label: 'Preview', link: '', active: false },
+      // { label: 'Preview', link: '', active: false },
       { label: 'Link Figma', link: 'https://www.figma.com/design/CQwugvkVhfjCsqpLOuLyaW/App-H%E1%BB%93-s%C6%A1-%C4%91i%E1%BB%87n-t%E1%BB%AD-Ver3.0?node-id=6282-36122&t=VrpsBEAT86lUSeth-1', active: true },
       { label: 'Case Study', link: '', active: false },
     ],
@@ -123,7 +123,7 @@ const projects: Project[] = [
     name: 'Super App AIO',
     description: 'An all-in-one platform for shopping electronics, home appliances, smart home devices, and home maintenance services in a single app.',
     actions: [
-      { label: 'Preview', link: '', active: false },
+      // { label: 'Preview', link: '', active: false },
       { label: 'Link Figma', link: 'https://www.figma.com/design/lDwQEbYp74V4fS8fEhJbt6/AIO-SUPER-APP?node-id=0-1&t=ECZFdnXbYOog78ra-1', active: true },
       { label: 'Case Study', link: '', active: false },
     ],
@@ -150,7 +150,7 @@ const projects: Project[] = [
     name: 'VnPost Mobile App',
     description: 'Mobile app design for VNPost focused on intuitive interaction and seamless user experience',
     actions: [
-      { label: 'Preview', link: '', active: false },
+      // { label: 'Preview', link: '', active: false },
       { label: 'Link Figma', link: 'https://www.figma.com/design/V6ge9uIppJokY9zDR27SYn/VNPost--Portfolio-?node-id=0-1&t=RR6ybVM3Gj3t81A4-1', active: true },
       { label: 'Case Study', link: '', active: false },
     ],
@@ -163,7 +163,7 @@ const projects: Project[] = [
     name: 'Vietjet Mobile App',
     description: 'In-flight food ordering app for Vietjet focused on intuitive interaction and seamless passenger experience',
     actions: [
-      { label: 'Preview', link: '', active: false },
+      // { label: 'Preview', link: '', active: false },
       { label: 'Link Figma', link: 'https://www.figma.com/design/hN4MJQSDTYD2bJosQr5kB5/Vietjet-Air--Public-?node-id=17639-391811&t=lJh0nHCMk5DpXC8U-1', active: true },
       { label: 'Case Study', link: '', active: false },
     ],
@@ -176,7 +176,7 @@ const projects: Project[] = [
     name: 'eTradevn',
     description: 'Focusing on user experience, clear information architecture, and a modern interface system.',
     actions: [
-      { label: 'Preview', link: '', active: false },
+      // { label: 'Preview', link: '', active: false },
       { label: 'Link Figma', link: 'https://www.figma.com/design/NLa8Obya1wEErhmQVa9M2B/LC-Website--Public-?node-id=2339-36467&t=eZidVVPSYbniVeEH-1', active: true },
       { label: 'Case Study', link: '', active: false },
     ],
