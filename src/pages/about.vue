@@ -87,82 +87,54 @@ const educations = [
   <div>
     <!-- Hero Section -->
     <section class="border-b border-[#DDDDDD]">
-      <div class="max-w-[1080px] mx-auto px-4 lg:px-0 py-16 lg:py-[100px]">
-        <div class="flex flex-col-reverse lg:flex-row lg:justify-between lg:items-end gap-12 lg:gap-12 flex-wrap">
+      <div class="max-w-[1080px] mx-auto px-4 lg:px-0 py-16 lg:py-[100px] flex flex-col gap-6 lg:gap-8">
+        <h1 class="text-[40px] font-bold leading-[60px] text-[#111827] scroll-reveal">
+          Chao xìn
+        </h1>
+
+        <div class="flex flex-col-reverse lg:flex-row items-start gap-12 lg:gap-16">
           <!-- Left Column -->
-          <div class="flex flex-col gap-12 flex-1 scroll-reveal">
-            <!-- Content -->
+          <div class="flex flex-col gap-8 flex-1 h-full lg:h-[450px] justify-between scroll-reveal">
             <div class="flex flex-col gap-4">
-              <h1
-                class="text-[40px] lg:text-[60px] font-bold leading-[1.8] lg:leading-[1.2] tracking-[-0.02em] text-[#111827]">
-                Chao xìn
-              </h1>
-              <div class="flex flex-col gap-12">
-                <div class="flex flex-col gap-4">
-                  <!-- Location -->
-                  <div class="flex items-center gap-2">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M12 13.43C13.7231 13.43 15.12 12.0331 15.12 10.31C15.12 8.58687 13.7231 7.19 12 7.19C10.2769 7.19 8.88 8.58687 8.88 10.31C8.88 12.0331 10.2769 13.43 12 13.43Z"
-                        stroke="#525252" stroke-width="1.5" />
-                      <path
-                        d="M3.62 8.49C5.59 -0.169998 18.42 -0.159998 20.38 8.5C21.53 13.58 18.37 17.88 15.6 20.54C13.59 22.48 10.41 22.48 8.39 20.54C5.63 17.88 2.47 13.57 3.62 8.49Z"
-                        stroke="#525252" stroke-width="1.5" />
-                    </svg>
-                  </div>
-                </div>
+              <p class="text-[18px] leading-[24px] font-light text-[#525252] whitespace-pre-wrap">Mình là <strong class="font-bold">Huy</strong> - Một chàng trai thích ngắm nhìn thế giới dưới góc độ hài hước
 
-                <p class="text-base leading-[1.5] text-[#4B5563]">
-                  Mình là <strong>Huy</strong> - Một chàng trai thích ngắm nhìn thế giới dưới góc độ hài hước  Từ nhỏ,
-                  mình đã luôn tò mò
-                  cách mọi thứ vận hành. Không chỉ là chúng trông như thế nào, mà là tại sao chúng hoạt động theo cách
-                  đó và liệu có cách nào có thể làm tốt hơn không. Nhờ đó, mình hình thành mindset "luôn có cách", và sẽ
-                  luôn có cách tốt hơn để thiết kế giải pháp và giải quyết vấn đề.
-                  Mình tin rằng thiết kế không chỉ tồn tại trên màn hình. Thiết kế hiện diện trong mọi trải nghiệm mà
-                  chúng ta tạo ra cho nhau trong cuộc sống mỗi ngày
-                </p>
-                <div class="text-base text-[#525252] flex gap-1">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M11.9999 13.4299C13.723 13.4299 15.1199 12.0331 15.1199 10.3099C15.1199 8.58681 13.723 7.18994 11.9999 7.18994C10.2768 7.18994 8.87988 8.58681 8.87988 10.3099C8.87988 12.0331 10.2768 13.4299 11.9999 13.4299Z"
-                      stroke="#7F7F7F" stroke-width="1.5" />
-                    <path
-                      d="M3.61971 8.49C5.58971 -0.169998 18.4197 -0.159997 20.3797 8.5C21.5297 13.58 18.3697 17.88 15.5997 20.54C13.5897 22.48 10.4097 22.48 8.38971 20.54C5.62971 17.88 2.46971 13.57 3.61971 8.49Z"
-                      stroke="#7F7F7F" stroke-width="1.5" />
-                  </svg>
-                  Thủ đô Hà Nội
-                </div>
+Từ nhỏ, mình đã luôn tò mò cách mọi thứ vận hành. Không chỉ là chúng trông như thế nào, mà là tại sao chúng hoạt động theo cách đó và liệu có cách nào có thể làm tốt hơn không. Nhờ đó, mình hình thành mindset "luôn có cách", và sẽ luôn có cách tốt hơn để thiết kế giải pháp và giải quyết vấn đề.
 
-                <!-- Stats -->
-                <div class="flex items-center gap-[30px] pt-6">
-                  <div class="flex flex-col gap-3 pr-[30px] border-r border-[#EAEAEA]">
-                    <span class="text-2xl font-extrabold tracking-[0.03em] text-[#FD6F00]">4+</span>
-                    <span class="text-base font-semibold text-[#525252]">Kinh nghiệm</span>
-                  </div>
-                  <div class="flex flex-col gap-3">
-                    <span class="text-2xl font-extrabold tracking-[0.03em] text-[#FD6F00]">20+</span>
-                    <span class="text-base font-semibold text-[#525252]">Dự án</span>
-                  </div>
-                </div>
+Mình tin rằng thiết kế không chỉ tồn tại trên màn hình. Thiết kế hiện diện trong mọi trải nghiệm mà chúng ta tạo ra cho nhau trong cuộc sống mỗi ngày</p>
+              
+              <div class="text-[16px] text-[#7F7F7F] flex items-center gap-2 mt-4">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11.9999 13.4299C13.723 13.4299 15.1199 12.0331 15.1199 10.3099C15.1199 8.58681 13.723 7.18994 11.9999 7.18994C10.2768 7.18994 8.87988 8.58681 8.87988 10.3099C8.87988 12.0331 10.2768 13.4299 11.9999 13.4299Z" stroke="#7F7F7F" stroke-width="1.5" />
+                  <path d="M3.61971 8.49C5.58971 -0.169998 18.4197 -0.159997 20.3797 8.5C21.5297 13.58 18.3697 17.88 15.5997 20.54C13.5897 22.48 10.4097 22.48 8.38971 20.54C5.62971 17.88 2.46971 13.57 3.61971 8.49Z" stroke="#7F7F7F" stroke-width="1.5" />
+                </svg>
+                Thủ đô Hà Nội
+              </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="flex items-center gap-[30px]">
+              <div class="flex flex-col gap-3 pr-[30px] border-r border-[#EAEAEA] py-1.5">
+                <span class="text-2xl font-extrabold tracking-[0.03em] text-[#FF9500]">4+</span>
+                <span class="text-base font-semibold text-[#525252]">Kinh nghiệm</span>
+              </div>
+              <div class="flex flex-col gap-3 py-1.5">
+                <span class="text-2xl font-extrabold tracking-[0.03em] text-[#FF9500]">20+</span>
+                <span class="text-base font-semibold text-[#525252]">Dự án</span>
               </div>
             </div>
 
             <!-- Download CV Button -->
             <a href="/CV.pdf" download="HuyDang_CV.pdf" target="_blank"
-              class="inline-flex items-center justify-center gap-2 h-12 px-6 bg-[#2A2A2A] text-white text-base font-medium leading-6 rounded-[4px] w-full lg:w-fit">
+              class="inline-flex items-center justify-center gap-2 h-12 px-6 bg-[#2A2A2A] text-white text-base font-medium leading-6 rounded-[4px] w-full lg:w-fit mt-4 lg:mt-0">
               <img src="/images/icons/icon-download.svg" alt="" width="24" height="24" />
-              Tải xuống CV
+              TẢI XUỐNG CV
             </a>
           </div>
 
           <!-- Right Column - Profile Picture -->
-          <div class="relative w-full lg:w-[320px] h-[430px] lg:h-[360px] shrink-0 scroll-reveal"
-            style="transition-delay: 150ms">
-            <div
-              class="absolute top-[48px] lg:top-[40px] left-[48px] lg:left-[40px] w-[calc(100%-48px)] lg:w-[280px] h-[382px] lg:h-[320px] bg-[#F8F8F8]">
-            </div>
-            <img :src="'/about-profile.png'" alt="Huy Dang"
-              class="absolute top-0 left-0 w-[calc(100%-48px)] lg:w-[280px] h-[382px] lg:h-[320px] object-cover border-8 border-white" />
+          <div class="relative w-full lg:w-[360px] h-[360px] lg:h-[450px] shrink-0 scroll-reveal" style="transition-delay: 150ms">
+            <img :src="'/new-about-profile.png'" alt="Huy Dang"
+              class="w-full h-full object-cover rounded-[4px]" />
           </div>
         </div>
       </div>

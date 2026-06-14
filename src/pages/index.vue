@@ -18,6 +18,7 @@ interface Project {
   role?: string
   actions: ProjectAction[]
   passwordProtected?: boolean
+  caseStudyPdfs?: string[]
 }
 
 const activeTab = ref('Tất cả')
@@ -52,8 +53,9 @@ const projects: Project[] = [
     role: 'Research, Design',
     actions: [
       { label: 'Link Figma', link: '', active: false },
-      { label: 'Case Study', link: 'https://www.figma.com/deck/2cJs9MSkmBu9PPccSZtnTQ/Team-3-H2Q?node-id=97-473&viewport=-240%2C-215%2C1.07&t=6XFB5tNNDtPWkuzE-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1', active: true },
+      { label: 'Case Study', link: '', active: true },
     ],
+    caseStudyPdfs: Array.from({ length: 44 }, (_, i) => `/slide-quizlet/${i + 1}.pdf`),
   },
   {
     id: 3,
@@ -192,8 +194,56 @@ const pendingAction = ref<{ href: string } | null>(null)
 
 const PASSWORD = '240206'
 
+const showCaseStudyModal = ref(false)
+const currentCaseStudyPdfs = ref<string[]>([])
+const currentCaseStudyIndex = ref(0)
+
+function openCaseStudy(pdfs: string[]) {
+  if (pdfs && pdfs.length > 0) {
+    currentCaseStudyPdfs.value = pdfs
+    currentCaseStudyIndex.value = 0
+    showCaseStudyModal.value = true
+  }
+}
+
+function closeCaseStudy() {
+  showCaseStudyModal.value = false
+  setTimeout(() => {
+    currentCaseStudyPdfs.value = []
+  }, 300)
+}
+
+function nextCaseStudySlide() {
+  if (currentCaseStudyIndex.value < currentCaseStudyPdfs.value.length - 1) {
+    currentCaseStudyIndex.value++
+  }
+}
+
+function prevCaseStudySlide() {
+  if (currentCaseStudyIndex.value > 0) {
+    currentCaseStudyIndex.value--
+  }
+}
+
+function handleScreenClick(e: MouseEvent) {
+  const { clientX } = e
+  const { innerWidth } = window
+  if (clientX < innerWidth / 2) {
+    prevCaseStudySlide()
+  } else {
+    nextCaseStudySlide()
+  }
+}
+
 function handleActionClick(project: Project, action: ProjectAction) {
   if (!action.active) return
+  
+  if (action.label === 'Case Study' && !action.link) {
+    if (project.caseStudyPdfs && project.caseStudyPdfs.length > 0) {
+      openCaseStudy(project.caseStudyPdfs)
+    }
+    return
+  }
   if (project.passwordProtected) {
     pendingAction.value = { href: action.link || '' }
     passwordDigits.value = ['', '', '', '', '', '']
@@ -283,8 +333,8 @@ useScrollReveal()
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
             <div v-for="(project, index) in filteredProjects" :key="project.id" class="scroll-reveal"
               :style="{ transitionDelay: `${index * 100}ms` }">
-              <ProjectCard :image="project.image" :year="project.year" :name="project.name"
-                :title="project.title" :tags="project.tags" :domain="project.domain" :role="project.role" :actions="project.actions"
+              <ProjectCard :image="project.image" :year="project.year" :name="project.name" :title="project.title"
+                :tags="project.tags" :domain="project.domain" :role="project.role" :actions="project.actions"
                 @action-click="handleActionClick(project, $event)" />
             </div>
           </div>
@@ -294,5 +344,52 @@ useScrollReveal()
 
     <PasswordDialog :show="showPasswordDialog" :error="passwordError" :digits="passwordDigits"
       @close="closePasswordDialog" @confirm="confirmPassword" @update:digits="passwordDigits = $event" />
+
+    <!-- Case Study Preview Overlay -->
+    <Teleport to="body">
+      <Transition
+        enter-active-class="transition duration-300 ease-out"
+        enter-from-class="opacity-0"
+        enter-to-class="opacity-100"
+        leave-active-class="transition duration-200 ease-in"
+        leave-from-class="opacity-100"
+        leave-to-class="opacity-0"
+      >
+        <div v-if="showCaseStudyModal" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/80">
+          
+          <!-- Full screen click overlay -->
+          <div class="absolute inset-0 z-40 cursor-pointer" @click="handleScreenClick"></div>
+
+          <button class="absolute top-6 right-6 text-white cursor-pointer z-50 p-2" @click="closeCaseStudy">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 8L24 24" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M24 8L8 24" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+          
+          <div class="relative z-30 w-full max-w-[95vw] lg:max-w-[1200px] aspect-video flex items-center justify-center bg-[#323639] rounded-xl shadow-2xl overflow-hidden">
+            <iframe v-if="currentCaseStudyPdfs.length > 0" :src="currentCaseStudyPdfs[currentCaseStudyIndex] + '#toolbar=0&navpanes=0&scrollbar=0&view=Fit'" class="w-full h-full border-none pointer-events-none" title="Case Study PDF Preview"></iframe>
+            
+            <!-- Left Arrow Indicator -->
+            <div class="absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-black/50 rounded-full text-white pointer-events-none transition-opacity duration-300 z-20" :class="currentCaseStudyIndex === 0 ? 'opacity-0' : 'opacity-100 lg:opacity-50'">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <!-- Right Arrow Indicator -->
+            <div class="absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-black/50 rounded-full text-white pointer-events-none transition-opacity duration-300 z-20" :class="currentCaseStudyIndex === currentCaseStudyPdfs.length - 1 ? 'opacity-0' : 'opacity-100 lg:opacity-50'">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            
+            <!-- Slide Counter -->
+            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 px-4 py-2 bg-black/50 rounded-full text-white text-sm pointer-events-none z-20">
+              {{ currentCaseStudyIndex + 1 }} / {{ currentCaseStudyPdfs.length }}
+            </div>
+          </div>
+        </div>
+      </Transition>
+    </Teleport>
   </div>
 </template>
