@@ -1,5 +1,5 @@
 <script setup lang="ts">
-interface ProjectAction {
+export interface ProjectAction {
   label: string
   href?: string
   link?: string
@@ -12,64 +12,75 @@ interface Project {
   category: string
   year: string
   name: string
-  description: string
+  title: string
+  tags?: string[]
+  domain?: string
+  role?: string
   actions: ProjectAction[]
   passwordProtected?: boolean
 }
 
-const activeTab = ref('ALL')
+const activeTab = ref('Tất cả')
 
-const tabs = ['ALL', 'WEBSITE', 'MOBILE APP', 'CASE STUDY']
+const tabs = ['Tất cả', 'Website', 'Mobile', 'Case Studies']
 
 const projects: Project[] = [
   {
     id: 1,
     image: '/images/projects/project-1.png',
-    category: 'WEBSITE',
+    category: 'Website',
     year: '2026',
-    name: 'SHB Finance redesign',
-    description: 'Coming soon...',
+    name: 'SHBFINANCE',
+    title: 'Tài chính tiêu dùng thông minh',
+    tags: ['Revamp', 'UI Design', 'Responsive'],
+    domain: 'Tài chính',
+    role: 'Design',
     actions: [
-      // { label: 'Preview', active: false },
       { label: 'Link Figma', active: false },
       { label: 'Case Study', active: false },
     ],
   },
   {
     id: 2,
-    image: '/images/projects/project-2.png',
-    category: 'CASE STUDY',
-    year: '2025',
-    name: 'Sendo Farm',
-    description: 'Solving business challenges, addressing user problems, and building habit-forming strategies.',
-    actions: [
-      // { label: 'Preview', link: '', active: false },
-      { label: 'Link Figma', link: '', active: false },
-      { label: 'Case Study', link: 'https://uxfoundation.vn/case-study/sendo-farm-brings-produce-from-the-farm-to-your-kitchen', active: true },
-    ],
-  },
-  {
-    id: 3,
     image: '/images/projects/project-3.png',
-    category: 'CASE STUDY',
+    category: 'Case Studies',
     year: '2024',
-    name: 'Quizlet',
-    description: 'Helping busy learners review and retain knowledge effectively based on their personal needs.',
+    name: 'QUIZLET',
+    title: 'Giải pháp giúp người đi làm ôn luyện & ghi nhớ đúng nhu cầu cá nhân',
+    tags: ['Research', 'UX Design'],
+    domain: 'Giáo dục',
+    role: 'Research, Design',
     actions: [
-      // { label: 'Preview', link: '', active: false },
       { label: 'Link Figma', link: '', active: false },
       { label: 'Case Study', link: 'https://www.figma.com/deck/2cJs9MSkmBu9PPccSZtnTQ/Team-3-H2Q?node-id=97-473&viewport=-240%2C-215%2C1.07&t=6XFB5tNNDtPWkuzE-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1', active: true },
     ],
   },
   {
+    id: 3,
+    image: '/images/projects/project-2.png',
+    category: 'Case Studies',
+    year: '2025',
+    name: 'SENDO FARM',
+    title: 'Xây dựng chiến lược tạo thói quen mua sắm cho người dùng',
+    tags: ['Business', 'Behavior Design', 'Research'],
+    domain: 'E-commerce',
+    role: 'Research, UIUX, Product',
+    actions: [
+      { label: 'Link Figma', link: '', active: false },
+      { label: 'Case Study', link: 'https://uxfoundation.vn/case-study/sendo-farm-brings-produce-from-the-farm-to-your-kitchen', active: true },
+    ],
+  },
+  {
     id: 4,
     image: '/images/projects/project-4.png',
-    category: 'WEBSITE',
+    category: 'Website',
     year: '2024',
-    name: 'Innovator Academy',
-    description: 'Online learning platform designed to deliver an intuitive and engaging educational experience.',
+    name: 'INNOVATOR ACADEMY',
+    title: 'Nền tảng bán khoá học trực tuyến',
+    tags: ['Branding', 'UI Design', 'Responsive'],
+    domain: 'Giáo dục',
+    role: 'UIUX Design',
     actions: [
-      // { label: 'Preview', link: 'https://innovator-iota.vercel.app/', active: true },
       { label: 'Link Figma', link: 'https://www.figma.com/design/weBC3oa7sb5qZHAzm1SQ9i/Innovator-Website-Ver-Final?node-id=48978-46043&t=kffqsFJ5gMYYFBPJ-1', active: true },
       { label: 'Case Study', link: '', active: false },
     ],
@@ -77,140 +88,100 @@ const projects: Project[] = [
   {
     id: 5,
     image: '/images/projects/project-10.png',
-    category: 'MOBILE APP',
-    year: '2024',
+    category: 'Mobile',
+    year: '2024 - 2026',
     name: 'CHRM',
-    description: 'An internal employee app for payroll management, leave requests, holiday gift registration, and company retreat booking...',
+    title: 'Ứng dụng nội bộ cho nhân viên',
+    tags: ['UIUX Design', 'Mobile App'],
+    domain: 'Chuyển đổi số',
+    role: 'UIUX, Product',
     actions: [
-      // { label: 'Preview', link: '', active: false },
       { label: 'Link Figma', link: 'https://www.figma.com/design/CQwugvkVhfjCsqpLOuLyaW/App-H%E1%BB%93-s%C6%A1-%C4%91i%E1%BB%87n-t%E1%BB%AD-Ver3.0?node-id=6282-36122&t=VrpsBEAT86lUSeth-1', active: true },
       { label: 'Case Study', link: '', active: false },
     ],
     passwordProtected: true,
   },
-  // {
-  //   id: 6,
-  //   image: '/images/projects/project-6.png',
-  //   category: 'WEBSITE',
-  //   year: '2024',
-  //   name: 'Bdesign',
-  //   description: 'A fashion brand website for showcasing and selling women\'s clothing collections with a modern and elegant shopping experience.',
-  //   actions: [
-  //     { label: 'Preview', link: 'https://bapwdesign.vercel.app/', active: true },
-  //     { label: 'Link Figma', link: 'https://www.figma.com/design/mBQAH7ltUWCzJlEtIH86g3/B-Design-Demo?node-id=1-5&t=DFSxbMeWdxOV10E2-1', active: true },
-  //     { label: 'Case Study', link: '', active: false },
-  //   ],
-  // },
-  // {
-  //   id: 7,
-  //   image: '/images/projects/project-7.png',
-  //   category: 'MOBILE APP',
-  //   year: '2024',
-  //   name: 'Super App AIO',
-  //   description: 'Internal mobile application for FPT employees focused on usability and workflow efficiency',
-  //   actions: [
-  //     { label: 'Preview', link: '', active: false },
-  //     { label: 'Link Figma', link: 'https://www.figma.com/design/eJN6IGcYzRIgSxJDXBdOBp/Spro-mobile--GD-?node-id=0-1&t=Mf43NkLy9Yfa2N2D-1', active: true },
-  //     { label: 'Case Study', link: '', active: false },
-  //   ],
-  //   passwordProtected: true,
-  // },
   {
-    id: 8,
-    image: '/images/projects/project-12.png',
-    category: 'MOBILE APP',
-    year: '2024',
-    name: 'Super App AIO',
-    description: 'An all-in-one platform for shopping electronics, home appliances, smart home devices, and home maintenance services in a single app.',
+    id: 6,
+    image: '/images/projects/PMS.png',
+    category: 'Website',
+    year: '2025',
+    name: 'PMS',
+    title: 'Phần mềm đánh giá và quản lý hiệu suất công việc của nhân viên',
+    tags: ['ERP', 'Web Design', 'Dashboard'],
+    domain: 'ERP, Chuyển đổi số',
+    role: 'UIUX Design',
     actions: [
-      // { label: 'Preview', link: '', active: false },
-      { label: 'Link Figma', link: 'https://www.figma.com/design/lDwQEbYp74V4fS8fEhJbt6/AIO-SUPER-APP?node-id=0-1&t=ECZFdnXbYOog78ra-1', active: true },
+      { label: 'Link Figma', link: 'https://www.figma.com/design/V58WebHMJh9L7DNXq2cVPU/PMS-WEBSITE-DEMO?node-id=50980-22476&t=uhtyuxcJadBO5Tqe-1', active: true },
       { label: 'Case Study', link: '', active: false },
     ],
     passwordProtected: true,
   },
-  // {
-  //   id: 9,
-  //   image: '/images/projects/project-5.png',
-  //   category: 'WEBSITE',
-  //   year: '2023',
-  //   name: 'eHighway',
-  //   description: 'E-commerce theme management platform designed for entrepreneurs selling to international markets',
-  //   actions: [
-  //     { label: 'Preview', link: '', active: false },
-  //     { label: 'Link Figma', link: 'https://www.figma.com/design/5AioPT6MCFF3KaUQ052lfL/eHighway?node-id=4703-96208&t=8i7x7K8R9OVFMIrr-1', active: true },
-  //     { label: 'Case Study', link: '', active: false },
-  //   ],
-  // },
   {
-    id: 10,
+    id: 7,
     image: '/images/projects/project-8.png',
-    category: 'MOBILE APP',
+    category: 'Mobile',
     year: '2022',
-    name: 'VnPost Mobile App',
-    description: 'Mobile app design for VNPost focused on intuitive interaction and seamless user experience',
+    name: 'VNPOST',
+    title: 'Ứng dụng cho khách hàng quản lý vận đơn Bưu điện Việt Nam',
+    tags: ['UIUX Design', 'Mobile App'],
+    domain: 'Logistics',
+    role: 'UIUX Design',
     actions: [
-      // { label: 'Preview', link: '', active: false },
       { label: 'Link Figma', link: 'https://www.figma.com/design/V6ge9uIppJokY9zDR27SYn/VNPost--Portfolio-?node-id=0-1&t=RR6ybVM3Gj3t81A4-1', active: true },
       { label: 'Case Study', link: '', active: false },
     ],
   },
   {
-    id: 11,
-    image: '/images/projects/project-11.png',
-    category: 'MOBILE APP',
-    year: '2022',
-    name: 'Vietjet Mobile App',
-    description: 'In-flight food ordering app for Vietjet focused on intuitive interaction and seamless passenger experience',
+    id: 8,
+    image: '/images/projects/project-12.png',
+    category: 'Mobile',
+    year: '2024',
+    name: 'AIO',
+    title: 'Hệ sinh thái siêu ứng dụng cung cấp các dịch vụ của Viettel Construction',
+    tags: ['Super App', 'UIUX Design', 'Mobile App'],
+    domain: 'E-commerce',
+    role: 'UIUX, Research, Product',
     actions: [
-      // { label: 'Preview', link: '', active: false },
+      { label: 'Link Figma', link: 'https://www.figma.com/design/lDwQEbYp74V4fS8fEhJbt6/AIO-SUPER-APP?node-id=0-1&t=ECZFdnXbYOog78ra-1', active: true },
+      { label: 'Case Study', link: '', active: false },
+    ],
+    passwordProtected: true,
+  },
+  {
+    id: 9,
+    image: '/images/projects/project-11.png',
+    category: 'Mobile',
+    year: '2022',
+    name: 'VIETJET',
+    title: 'Ứng dụng đặt đồ ăn trên máy bay dành cho tiếp viên',
+    tags: ['UI Design', 'Mobile App'],
+    domain: 'Foodie',
+    role: 'UI Design',
+    actions: [
       { label: 'Link Figma', link: 'https://www.figma.com/design/hN4MJQSDTYD2bJosQr5kB5/Vietjet-Air--Public-?node-id=17639-391811&t=lJh0nHCMk5DpXC8U-1', active: true },
       { label: 'Case Study', link: '', active: false },
     ],
   },
   {
-    id: 12,
+    id: 10,
     image: '/images/projects/project-9.png',
-    category: 'WEBSITE',
+    category: 'Website',
     year: '2022',
-    name: 'eTradevn',
-    description: 'Focusing on user experience, clear information architecture, and a modern interface system.',
+    name: 'ETRADEVN',
+    title: 'Nền tảng Blockchain về thư tín dụng nội địa tại Việt Nam',
+    tags: ['Web Design', 'Visual Design'],
+    domain: 'Fintech',
+    role: 'UI Design',
     actions: [
-      // { label: 'Preview', link: '', active: false },
       { label: 'Link Figma', link: 'https://www.figma.com/design/NLa8Obya1wEErhmQVa9M2B/LC-Website--Public-?node-id=2339-36467&t=eZidVVPSYbniVeEH-1', active: true },
       { label: 'Case Study', link: '', active: false },
     ],
   },
-  // {
-  //   id: 13,
-  //   image: '/images/projects/project-13.png',
-  //   category: 'WEBSITE',
-  //   year: '2021',
-  //   name: 'Chronos Website',
-  //   description: 'Website project for a watch and jewelry brand featuring a minimalist, modern, and aesthetically refined design.',
-  //   actions: [
-  //     { label: 'Preview', link: '', active: false },
-  //     { label: 'Link Figma', link: 'https://www.figma.com/design/8vD20IwQAfpFQmo9n6N2uG/Web-Chronos?node-id=101-2&t=AWqPisXgMe0uuJqJ-1', active: true },
-  //     { label: 'Case Study', link: '', active: false },
-  //   ],
-  // },
-  // {
-  //   id: 14,
-  //   image: '/images/projects/project-14.png',
-  //   category: 'WEBSITE',
-  //   year: '2026',
-  //   name: 'Evo Gaming',
-  //  description: 'A gaming e-commerce platform for buying discounted games, game accounts, and digital gaming products.',
-  //  actions: [
-  //    { label: 'Preview', link: 'https://evo-gaming.vercel.app/', active: true },
-  //    { label: 'Link Figma', link: 'https://www.figma.com/design/hvuozAjzZ0v8HVLS6QxGIo/Evo-Gaming-Demo?node-id=33-101&t=G1AhM0uBowH0vsjk-1', active: true },
-  //    { label: 'Case Study', link: '', active: false },
-  //  ],
-  // },
 ]
 
 const filteredProjects = computed(() => {
-  if (activeTab.value === 'ALL') return projects
+  if (activeTab.value === 'Tất cả') return projects
   return projects.filter(p => p.category === activeTab.value)
 })
 
@@ -276,10 +247,14 @@ useScrollReveal()
           <!-- Description -->
           <div class="pt-[17px]">
             <p class="text-base lg:text-lg leading-[1.5] lg:leading-[1.56] text-[#525252]">
-              With over 4 years of experience in UX Design, I specialize in creating minimalist, modern, and
-              user-centered experiences. I have worked on enterprise systems, e-commerce products, and Design Systems,
-              with a solid understanding of HTML/CSS and strong collaboration skills with BAs and Developers. I'm always
-              eager to explore new design trends to build intuitive and effective products.
+              Với hơn <strong>4 năm kinh nghiệm</strong> trong lĩnh vực thiết kế trải nghiệm người dùng. Theo đuổi phong
+              cách <strong>tối giản, hiện đại</strong> và ưu tiên trải nghiệm người dùng thực tế. Thành thạo công cụ
+              <strong>Figma</strong> và <strong>Design System</strong>, có kiến
+              thức cơ bản về <strong>HTML/CSS</strong>, khả năng <strong>phối hợp tốt với BA, Developer</strong> và tinh
+              thần <strong>trách nhiệm cao</strong> trong công việc. Luôn <strong>cập nhật xu hướng, ứng dụng
+                AI</strong> vào work flow
+              mới nhằm tạo ra các sản phẩm trực quan và chất
+              lượng.
             </p>
           </div>
         </div>
@@ -291,7 +266,7 @@ useScrollReveal()
       <div class="max-w-[1080px] mx-auto py-6 pb-16 lg:py-[100px] lg:pb-[200px]">
         <div class="flex flex-col gap-6">
           <!-- Title -->
-          <h2 class="text-[32px] font-bold leading-[1.25] text-[#2A2A2A] scroll-reveal">My Project</h2>
+          <h2 class="text-[32px] font-bold leading-[1.25] text-[#2A2A2A] scroll-reveal">Một vài dự án tiêu biểu</h2>
 
           <!-- Tabs -->
           <div class="flex gap-6 scroll-reveal" style="transition-delay: 100ms">
@@ -309,7 +284,7 @@ useScrollReveal()
             <div v-for="(project, index) in filteredProjects" :key="project.id" class="scroll-reveal"
               :style="{ transitionDelay: `${index * 100}ms` }">
               <ProjectCard :image="project.image" :year="project.year" :name="project.name"
-                :description="project.description" :actions="project.actions"
+                :title="project.title" :tags="project.tags" :domain="project.domain" :role="project.role" :actions="project.actions"
                 @action-click="handleActionClick(project, $event)" />
             </div>
           </div>

@@ -22,11 +22,11 @@ const experiences = [
     period: '07/2024 - 05/2026',
     role: 'UIUX Designer',
     description: [
-      'Designed website interfaces, mobile applications, and internal management systems for enterprise operations.',
-      'Collaborated with Product Managers, Business Analysts, and Developers to analyze requirements and create user-centered experiences.',
-      'Built and maintained Design Systems to ensure consistency across the company\'s digital products.',
-      'Optimized user flows and improved usability for internal operational systems.',
-      'Designed dashboards and data-driven interfaces to support management and daily operations.',
+      'Thiết kế giao diện Website, Mobile app ở nhiều lĩnh vực và hệ thống quản lý nội bộ cho doanh nghiệp.',
+      'Phối hợp cùng PM, BA và Developer để phân tích yêu cầu và xây dựng trải nghiệm người dùng tối ưu.',
+      'Xây mới và quản lý Design System đảm bảo tính nhất quán giữa các sản phẩm số của doanh nghiệp',
+      'Tối ưu trải nghiệm người dùng cho ứng dụng mobile dựa trên hành vi sử dụng thực tế.',
+      'Thiết kế dashboard và giao diện dữ liệu phục vụ quản lý và vận hành.',
     ],
   },
   {
@@ -34,9 +34,9 @@ const experiences = [
     period: '10/2022 - 06/2024',
     role: 'UIUX Designer',
     description: [
-      'Contributed to the development of an e-commerce product for international markets in a startup environment.',
-      'Designed shopping experiences and optimized checkout flows to improve overall user experience.',
-      'Improved the product interface based on user feedback and business requirements.',
+      'Tham gia phát triển sản phẩm thương mại điện tử cho thị trường quốc tế trong môi trường startup.',
+      'Thiết kế trải nghiệm mua sắm và tối ưu luồng thanh toán nhằm cải thiện trải nghiệm người dùng.',
+      'Cải tiến giao diện dựa trên phản hồi người dùng và yêu cầu kinh doanh.',
     ],
   },
   {
@@ -44,9 +44,9 @@ const experiences = [
     period: '10/2021 - 06/2022',
     role: 'Fresser',
     description: [
-      'Gained hands-on experience with Design Systems and contributed to building and maintaining them throughout the product development process.',
-      'Supported the creation of wireframes, mockups, and prototypes using Figma.',
-      'Had the opportunity to contribute to several large-scale projects such as VNPost and Spro.',
+      'Tiếp cận và xây dựng Design System trong quá trình phát triển sản phẩm ',
+      'Hỗ trợ thiết kế wireframe, mockup và prototype bằng Figma.',
+      'Được tham gia nhiều dự án có quy mô lớn như Vnpost, Spro, ...',
     ],
   },
 ]
@@ -74,9 +74,9 @@ const educations = [
     image: '/arena-multimedia.jpg',
   },
   {
-    institution: 'Vinh University of Technical',
+    institution: 'Đại học Sư phạm kỹ thuật Vinh',
     year: '2016-2020',
-    program: 'Specialization: Information technology',
+    program: 'Công nghệ thông tin',
     tag: null,
     image: '/vinh-university.jpg',
   },
@@ -95,7 +95,7 @@ const educations = [
             <div class="flex flex-col gap-4">
               <h1
                 class="text-[40px] lg:text-[60px] font-bold leading-[1.8] lg:leading-[1.2] tracking-[-0.02em] text-[#111827]">
-                Hi, I'm Huy Dang
+                Chao xìn
               </h1>
               <div class="flex flex-col gap-12">
                 <div class="flex flex-col gap-4">
@@ -109,27 +109,39 @@ const educations = [
                         d="M3.62 8.49C5.59 -0.169998 18.42 -0.159998 20.38 8.5C21.53 13.58 18.37 17.88 15.6 20.54C13.59 22.48 10.41 22.48 8.39 20.54C5.63 17.88 2.47 13.57 3.62 8.49Z"
                         stroke="#525252" stroke-width="1.5" />
                     </svg>
-                    <span class="text-base text-[#525252]">Ha Noi Capital, VietNam</span>
                   </div>
                 </div>
 
                 <p class="text-base leading-[1.5] text-[#4B5563]">
-                  I started my UI/UX journey in an enterprise environment, where I was introduced to design systems and
-                  real-world product development processes. Later, I had the opportunity to work at an international
-                  e-commerce startup, which strengthened my ownership mindset and end-to-end product design
-                  experience.<br><br>Today, I focus on designing web and mobile products with a minimalist and modern
-                  approach—prioritizing user experience while keeping development feasibility in mind.
+                  Mình là <strong>Huy</strong> - Một chàng trai thích ngắm nhìn thế giới dưới góc độ hài hước  Từ nhỏ,
+                  mình đã luôn tò mò
+                  cách mọi thứ vận hành. Không chỉ là chúng trông như thế nào, mà là tại sao chúng hoạt động theo cách
+                  đó và liệu có cách nào có thể làm tốt hơn không. Nhờ đó, mình hình thành mindset "luôn có cách", và sẽ
+                  luôn có cách tốt hơn để thiết kế giải pháp và giải quyết vấn đề.
+                  Mình tin rằng thiết kế không chỉ tồn tại trên màn hình. Thiết kế hiện diện trong mọi trải nghiệm mà
+                  chúng ta tạo ra cho nhau trong cuộc sống mỗi ngày
                 </p>
+                <div class="text-base text-[#525252] flex gap-1">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M11.9999 13.4299C13.723 13.4299 15.1199 12.0331 15.1199 10.3099C15.1199 8.58681 13.723 7.18994 11.9999 7.18994C10.2768 7.18994 8.87988 8.58681 8.87988 10.3099C8.87988 12.0331 10.2768 13.4299 11.9999 13.4299Z"
+                      stroke="#7F7F7F" stroke-width="1.5" />
+                    <path
+                      d="M3.61971 8.49C5.58971 -0.169998 18.4197 -0.159997 20.3797 8.5C21.5297 13.58 18.3697 17.88 15.5997 20.54C13.5897 22.48 10.4097 22.48 8.38971 20.54C5.62971 17.88 2.46971 13.57 3.61971 8.49Z"
+                      stroke="#7F7F7F" stroke-width="1.5" />
+                  </svg>
+                  Thủ đô Hà Nội
+                </div>
 
                 <!-- Stats -->
                 <div class="flex items-center gap-[30px] pt-6">
                   <div class="flex flex-col gap-3 pr-[30px] border-r border-[#EAEAEA]">
                     <span class="text-2xl font-extrabold tracking-[0.03em] text-[#FD6F00]">4+</span>
-                    <span class="text-base font-semibold text-[#525252]">Experiences</span>
+                    <span class="text-base font-semibold text-[#525252]">Kinh nghiệm</span>
                   </div>
                   <div class="flex flex-col gap-3">
                     <span class="text-2xl font-extrabold tracking-[0.03em] text-[#FD6F00]">20+</span>
-                    <span class="text-base font-semibold text-[#525252]">Project done</span>
+                    <span class="text-base font-semibold text-[#525252]">Dự án</span>
                   </div>
                 </div>
               </div>
@@ -139,12 +151,13 @@ const educations = [
             <a href="/CV.pdf" download="HuyDang_CV.pdf" target="_blank"
               class="inline-flex items-center justify-center gap-2 h-12 px-6 bg-[#2A2A2A] text-white text-base font-medium leading-6 rounded-[4px] w-full lg:w-fit">
               <img src="/images/icons/icon-download.svg" alt="" width="24" height="24" />
-              Download My CV
+              Tải xuống CV
             </a>
           </div>
 
           <!-- Right Column - Profile Picture -->
-          <div class="relative w-full lg:w-[320px] h-[430px] lg:h-[360px] shrink-0 scroll-reveal" style="transition-delay: 150ms">
+          <div class="relative w-full lg:w-[320px] h-[430px] lg:h-[360px] shrink-0 scroll-reveal"
+            style="transition-delay: 150ms">
             <div
               class="absolute top-[48px] lg:top-[40px] left-[48px] lg:left-[40px] w-[calc(100%-48px)] lg:w-[280px] h-[382px] lg:h-[320px] bg-[#F8F8F8]">
             </div>
@@ -161,15 +174,15 @@ const educations = [
         <!-- Left -->
         <div class="flex flex-col gap-6 w-full lg:w-[402px] shrink-0 scroll-reveal">
           <div class="flex flex-col gap-4">
-            <h2 class="text-[32px] font-bold leading-[1.25] text-black">My Experience</h2>
+            <h2 class="text-[32px] font-bold leading-[1.25] text-black">Kinh nghiệm</h2>
             <p class="text-base leading-[1.5] text-[#525252]">
-              You can find some of my works in my portfolio. If you need a product design moderm, simple &amp; trending.
-              Please contact me!
+              Bạn có thể xem một số dự án của mình ở Portfolio. Nếu bạn cần thiết kế sản phẩm hiện đại, tối ưu. Hãy liên
+              hệ với mình
             </p>
           </div>
           <a href="https://www.facebook.com/gabdol98/" target="_blank"
             class="inline-flex items-center justify-center h-12 px-6 border border-[#2A2A2A] text-[#2A2A2A] text-base font-medium rounded-[4px] w-full lg:w-fit">
-            Contact Me
+            Liên hệ
           </a>
         </div>
 
@@ -201,8 +214,7 @@ const educations = [
             </div>
 
             <!-- Expanded content -->
-            <div v-if="exp.description.length > 0"
-              class="grid transition-[grid-template-rows] duration-300 ease-in-out"
+            <div v-if="exp.description.length > 0" class="grid transition-[grid-template-rows] duration-300 ease-in-out"
               :class="expandedExperience === index ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'">
               <div class="overflow-hidden">
                 <ul class="pt-6 text-base leading-[1.5] text-[#525252] list-disc pl-5 space-y-1">
@@ -219,8 +231,7 @@ const educations = [
     <section class="border-b border-[#DDDDDD]">
       <div class="max-w-[1080px] mx-auto px-4 lg:px-0 py-16 lg:py-[100px] flex flex-col gap-16">
         <div class="flex gap-4 scroll-reveal">
-          <h2 class="text-[32px] font-bold leading-[1.25] text-black text-left">Take a look at my
-            Education
+          <h2 class="text-[32px] font-bold leading-[1.25] text-black text-left">Trình độ học vấn
           </h2>
         </div>
 
