@@ -19,6 +19,7 @@ interface Project {
   actions: ProjectAction[]
   passwordProtected?: boolean
   caseStudyPdfs?: string[]
+  caseStudyPdf?: string
 }
 
 const activeTab = ref('Tất cả')
@@ -54,9 +55,10 @@ const projects: Project[] = [
     role: 'UIUX, Product',
     actions: [
       { label: 'Link Figma', link: 'https://www.figma.com/design/CQwugvkVhfjCsqpLOuLyaW/App-H%E1%BB%93-s%C6%A1-%C4%91i%E1%BB%87n-t%E1%BB%AD-Ver3.0?node-id=6282-36122&t=VrpsBEAT86lUSeth-1', active: true },
-      { label: 'Case Study', link: '', active: false },
+      { label: 'Case Study', link: '', active: true },
     ],
     passwordProtected: true,
+    caseStudyPdf: '/cHRM Case Study.pdf',
   },
   {
     id: 4,
@@ -204,6 +206,21 @@ const showCaseStudyModal = ref(false)
 const currentCaseStudyPdfs = ref<string[]>([])
 const currentCaseStudyIndex = ref(0)
 
+const showPdfPreview = ref(false)
+const currentPdfUrl = ref('')
+
+function openPdfPreview(pdfUrl: string) {
+  currentPdfUrl.value = pdfUrl
+  showPdfPreview.value = true
+}
+
+function closePdfPreview() {
+  showPdfPreview.value = false
+  setTimeout(() => {
+    currentPdfUrl.value = ''
+  }, 300)
+}
+
 function openCaseStudy(pdfs: string[]) {
   if (pdfs && pdfs.length > 0) {
     currentCaseStudyPdfs.value = pdfs
@@ -245,6 +262,10 @@ function handleActionClick(project: Project, action: ProjectAction) {
   if (!action.active) return
 
   if (action.label === 'Case Study' && !action.link) {
+    if (project.caseStudyPdf) {
+      openPdfPreview(project.caseStudyPdf)
+      return
+    }
     if (project.caseStudyPdfs && project.caseStudyPdfs.length > 0) {
       openCaseStudy(project.caseStudyPdfs)
     }
@@ -402,5 +423,12 @@ useScrollReveal()
         </div>
       </Transition>
     </Teleport>
+
+    <!-- PDF Scrollable Preview Modal (for CHRM Case Study) -->
+    <CaseStudyPdfViewer
+      :show="showPdfPreview"
+      :pdf-url="currentPdfUrl"
+      @close="closePdfPreview"
+    />
   </div>
 </template>

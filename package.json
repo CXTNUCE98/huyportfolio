@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "nuxt": "^3.11.1",
+    "pdfjs-dist": "^6.0.227",
     "vue": "^3.4.21",
+    "vue-pdf-embed": "^2.1.4",
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
