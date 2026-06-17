@@ -27,22 +27,6 @@ const tabs = ['Tất cả', 'Website', 'Mobile', 'Case Studies']
 
 const projects: Project[] = [
   {
-    id: 1,
-    image: '/images/projects/project-1.png',
-    category: 'Website',
-    year: '2026',
-    name: 'SHBFINANCE',
-    title: 'Tài chính tiêu dùng thông minh',
-    tags: ['Revamp', 'UI Design', 'Responsive'],
-    domain: 'Tài chính',
-    role: 'Design',
-    actions: [
-      { label: 'Link Figma', active: false },
-      { label: 'Case Study', active: false },
-    ],
-    passwordProtected: true,
-  },
-  {
     id: 2,
     image: '/images/projects/project-3.png',
     category: 'Case Studies',
@@ -53,24 +37,24 @@ const projects: Project[] = [
     domain: 'Giáo dục',
     role: 'Research, Design',
     actions: [
-      { label: 'Link Figma', link: '', active: false },
+      { label: 'Link Figma', link: 'https://www.figma.com/design/comaiHItHsKJhtHOWBssDB/Quizlet-Case-Study?node-id=4-12523&t=erhbj7dFQ0U7gU8D-1', active: false },
       { label: 'Case Study', link: '', active: true },
     ],
     caseStudyPdfs: Array.from({ length: 44 }, (_, i) => `/slide-quizlet/${i + 1}.pdf`),
   },
   {
-    id: 3,
-    image: '/images/projects/project-2.png',
-    category: 'Case Studies',
-    year: '2025',
-    name: 'SENDO FARM',
-    title: 'Xây dựng chiến lược tạo thói quen mua sắm cho người dùng',
-    tags: ['Business', 'Behavior Design', 'Research'],
-    domain: 'E-commerce',
-    role: 'Research, UIUX, Product',
+    id: 5,
+    image: '/images/projects/project-10.png',
+    category: 'Mobile',
+    year: '2024 - 2026',
+    name: 'CHRM',
+    title: 'Ứng dụng nội bộ cho nhân viên',
+    tags: ['UIUX Design', 'Mobile App'],
+    domain: 'Chuyển đổi số',
+    role: 'UIUX, Product',
     actions: [
-      { label: 'Link Figma', link: '', active: false },
-      { label: 'Case Study', link: 'https://uxfoundation.vn/case-study/sendo-farm-brings-produce-from-the-farm-to-your-kitchen', active: true },
+      { label: 'Link Figma', link: 'https://www.figma.com/design/CQwugvkVhfjCsqpLOuLyaW/App-H%E1%BB%93-s%C6%A1-%C4%91i%E1%BB%87n-t%E1%BB%AD-Ver3.0?node-id=6282-36122&t=VrpsBEAT86lUSeth-1', active: true },
+      { label: 'Case Study', link: '', active: false },
     ],
     passwordProtected: true,
   },
@@ -86,22 +70,6 @@ const projects: Project[] = [
     role: 'UIUX Design',
     actions: [
       { label: 'Link Figma', link: 'https://www.figma.com/design/CQwugvkVhfjCsqpLOuLyaW/cHRM-Demo?node-id=6530-35291&t=rFumOeWQ5yqnICzd-4', active: true },
-      { label: 'Case Study', link: '', active: false },
-    ],
-    passwordProtected: true,
-  },
-  {
-    id: 5,
-    image: '/images/projects/project-10.png',
-    category: 'Mobile',
-    year: '2024 - 2026',
-    name: 'CHRM',
-    title: 'Ứng dụng nội bộ cho nhân viên',
-    tags: ['UIUX Design', 'Mobile App'],
-    domain: 'Chuyển đổi số',
-    role: 'UIUX, Product',
-    actions: [
-      { label: 'Link Figma', link: 'https://www.figma.com/design/CQwugvkVhfjCsqpLOuLyaW/App-H%E1%BB%93-s%C6%A1-%C4%91i%E1%BB%87n-t%E1%BB%AD-Ver3.0?node-id=6282-36122&t=VrpsBEAT86lUSeth-1', active: true },
       { label: 'Case Study', link: '', active: false },
     ],
     passwordProtected: true,
@@ -186,6 +154,38 @@ const projects: Project[] = [
     ],
     passwordProtected: true,
   },
+  {
+    id: 3,
+    image: '/images/projects/project-2.png',
+    category: 'Case Studies',
+    year: '2025',
+    name: 'SENDO FARM',
+    title: 'Xây dựng chiến lược tạo thói quen mua sắm cho người dùng',
+    tags: ['Business', 'Behavior Design', 'Research'],
+    domain: 'E-commerce',
+    role: 'Research, UIUX, Product',
+    actions: [
+      { label: 'Link Figma', link: '', active: false },
+      { label: 'Case Study', link: 'https://uxfoundation.vn/case-study/sendo-farm-brings-produce-from-the-farm-to-your-kitchen', active: true },
+    ],
+    passwordProtected: true,
+  },
+  {
+    id: 1,
+    image: '/images/projects/project-1.png',
+    category: 'Website',
+    year: '2026',
+    name: 'SHBFINANCE',
+    title: 'Tài chính tiêu dùng thông minh',
+    tags: ['Revamp', 'UI Design', 'Responsive'],
+    domain: 'Tài chính',
+    role: 'Design',
+    actions: [
+      { label: 'Link Figma', active: false },
+      { label: 'Case Study', active: false },
+    ],
+    passwordProtected: true,
+  },
 ]
 
 const filteredProjects = computed(() => {
@@ -243,7 +243,7 @@ function handleScreenClick(e: MouseEvent) {
 
 function handleActionClick(project: Project, action: ProjectAction) {
   if (!action.active) return
-  
+
   if (action.label === 'Case Study' && !action.link) {
     if (project.caseStudyPdfs && project.caseStudyPdfs.length > 0) {
       openCaseStudy(project.caseStudyPdfs)
@@ -353,16 +353,11 @@ useScrollReveal()
 
     <!-- Case Study Preview Overlay -->
     <Teleport to="body">
-      <Transition
-        enter-active-class="transition duration-300 ease-out"
-        enter-from-class="opacity-0"
-        enter-to-class="opacity-100"
-        leave-active-class="transition duration-200 ease-in"
-        leave-from-class="opacity-100"
-        leave-to-class="opacity-0"
-      >
+      <Transition enter-active-class="transition duration-300 ease-out" enter-from-class="opacity-0"
+        enter-to-class="opacity-100" leave-active-class="transition duration-200 ease-in" leave-from-class="opacity-100"
+        leave-to-class="opacity-0">
         <div v-if="showCaseStudyModal" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/80">
-          
+
           <!-- Full screen click overlay -->
           <div class="absolute inset-0 z-40 cursor-pointer" @click="handleScreenClick"></div>
 
@@ -372,25 +367,35 @@ useScrollReveal()
               <path d="M24 8L8 24" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
           </button>
-          
-          <div class="relative z-30 w-full max-w-[95vw] lg:max-w-[1200px] aspect-video flex items-center justify-center bg-[#323639] rounded-xl shadow-2xl overflow-hidden">
-            <iframe v-if="currentCaseStudyPdfs.length > 0" :src="currentCaseStudyPdfs[currentCaseStudyIndex] + '#toolbar=0&navpanes=0&scrollbar=0&view=Fit'" class="w-full h-full border-none pointer-events-none" title="Case Study PDF Preview"></iframe>
-            
+
+          <div
+            class="relative z-30 w-full max-w-[95vw] lg:max-w-[1200px] aspect-video flex items-center justify-center bg-[#323639] rounded-xl shadow-2xl overflow-hidden">
+            <iframe v-if="currentCaseStudyPdfs.length > 0"
+              :src="currentCaseStudyPdfs[currentCaseStudyIndex] + '#toolbar=0&navpanes=0&scrollbar=0&view=Fit'"
+              class="w-full h-full border-none pointer-events-none" title="Case Study PDF Preview"></iframe>
+
             <!-- Left Arrow Indicator -->
-            <div class="absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-black/50 rounded-full text-white pointer-events-none transition-opacity duration-300 z-20" :class="currentCaseStudyIndex === 0 ? 'opacity-0' : 'opacity-100 lg:opacity-50'">
+            <div
+              class="absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-black/50 rounded-full text-white pointer-events-none transition-opacity duration-300 z-20"
+              :class="currentCaseStudyIndex === 0 ? 'opacity-0' : 'opacity-100 lg:opacity-50'">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
               </svg>
             </div>
             <!-- Right Arrow Indicator -->
-            <div class="absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-black/50 rounded-full text-white pointer-events-none transition-opacity duration-300 z-20" :class="currentCaseStudyIndex === currentCaseStudyPdfs.length - 1 ? 'opacity-0' : 'opacity-100 lg:opacity-50'">
+            <div
+              class="absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-black/50 rounded-full text-white pointer-events-none transition-opacity duration-300 z-20"
+              :class="currentCaseStudyIndex === currentCaseStudyPdfs.length - 1 ? 'opacity-0' : 'opacity-100 lg:opacity-50'">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
               </svg>
             </div>
-            
+
             <!-- Slide Counter -->
-            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 px-4 py-2 bg-black/50 rounded-full text-white text-sm pointer-events-none z-20">
+            <div
+              class="absolute bottom-4 left-1/2 -translate-x-1/2 px-4 py-2 bg-black/50 rounded-full text-white text-sm pointer-events-none z-20">
               {{ currentCaseStudyIndex + 1 }} / {{ currentCaseStudyPdfs.length }}
             </div>
           </div>
