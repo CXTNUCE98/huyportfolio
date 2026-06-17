@@ -40,6 +40,7 @@ const projects: Project[] = [
       { label: 'Link Figma', active: false },
       { label: 'Case Study', active: false },
     ],
+    passwordProtected: true,
   },
   {
     id: 2,
@@ -71,6 +72,7 @@ const projects: Project[] = [
       { label: 'Link Figma', link: '', active: false },
       { label: 'Case Study', link: 'https://uxfoundation.vn/case-study/sendo-farm-brings-produce-from-the-farm-to-your-kitchen', active: true },
     ],
+    passwordProtected: true,
   },
   {
     id: 4,
@@ -83,9 +85,10 @@ const projects: Project[] = [
     domain: 'Giáo dục',
     role: 'UIUX Design',
     actions: [
-      { label: 'Link Figma', link: 'https://www.figma.com/design/weBC3oa7sb5qZHAzm1SQ9i/Innovator-Website-Ver-Final?node-id=48978-46043&t=kffqsFJ5gMYYFBPJ-1', active: true },
+      { label: 'Link Figma', link: 'https://www.figma.com/design/CQwugvkVhfjCsqpLOuLyaW/cHRM-Demo?node-id=6530-35291&t=rFumOeWQ5yqnICzd-4', active: true },
       { label: 'Case Study', link: '', active: false },
     ],
+    passwordProtected: true,
   },
   {
     id: 5,
@@ -133,6 +136,7 @@ const projects: Project[] = [
       { label: 'Link Figma', link: 'https://www.figma.com/design/V6ge9uIppJokY9zDR27SYn/VNPost--Portfolio-?node-id=0-1&t=RR6ybVM3Gj3t81A4-1', active: true },
       { label: 'Case Study', link: '', active: false },
     ],
+    passwordProtected: true,
   },
   {
     id: 8,
@@ -164,6 +168,7 @@ const projects: Project[] = [
       { label: 'Link Figma', link: 'https://www.figma.com/design/hN4MJQSDTYD2bJosQr5kB5/Vietjet-Air--Public-?node-id=17639-391811&t=lJh0nHCMk5DpXC8U-1', active: true },
       { label: 'Case Study', link: '', active: false },
     ],
+    passwordProtected: true,
   },
   {
     id: 10,
@@ -179,6 +184,7 @@ const projects: Project[] = [
       { label: 'Link Figma', link: 'https://www.figma.com/design/NLa8Obya1wEErhmQVa9M2B/LC-Website--Public-?node-id=2339-36467&t=eZidVVPSYbniVeEH-1', active: true },
       { label: 'Case Study', link: '', active: false },
     ],
+    passwordProtected: true,
   },
 ]
 

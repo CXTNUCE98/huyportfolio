@@ -89,8 +89,8 @@ function getPassword() {
             </div>
 
             <div class="flex flex-col gap-2">
-              <h3 class="text-lg font-semibold text-[#2A2A2A]">Enter Password</h3>
-              <p class="text-sm text-[#525252]">This project is protected due to confidentiality.</p>
+              <h3 class="text-lg font-semibold text-[#2A2A2A]">Nhập mật khẩu</h3>
+              <p class="text-sm text-[#525252]">Dự án này được bảo mật vì lý do riêng tư.</p>
             </div>
 
             <div ref="otpContainer" class="otp-container flex gap-2" @paste="onPaste">
@@ -109,12 +109,12 @@ function getPassword() {
               class="w-full h-10 rounded flex items-center justify-center text-sm font-medium transition-colors"
               :class="digits.every(d => d) ? 'bg-[#2A2A2A] text-white' : 'bg-[#2A2A2A]/50 text-white pointer-events-none'"
               @click="emit('confirm')">
-              Confirm
+              Xác nhận
             </button>
             <button type="button"
               class="w-full h-10 rounded flex items-center justify-center text-sm font-medium bg-[#8E8E93]/10 text-[#404040] hover:bg-[#8E8E93]/20 transition-colors"
               @click="getPassword">
-              Get Password
+              Lấy mật khẩu
             </button>
           </div>
         </div>
