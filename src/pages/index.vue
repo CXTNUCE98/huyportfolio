@@ -38,7 +38,7 @@ const projects: Project[] = [
     domain: 'Giáo dục',
     role: 'Research, Design',
     actions: [
-      { label: 'Link Figma', link: 'https://www.figma.com/design/comaiHItHsKJhtHOWBssDB/Quizlet-Case-Study?node-id=4-12523&t=erhbj7dFQ0U7gU8D-1', active: false },
+      { label: 'Link Figma', link: 'https://www.figma.com/design/comaiHItHsKJhtHOWBssDB/Quizlet-Case-Study?node-id=4-12523&t=erhbj7dFQ0U7gU8D-1', active: true },
       { label: 'Case Study', link: '', active: true },
     ],
     caseStudyPdfs: Array.from({ length: 44 }, (_, i) => `/slide-quizlet/${i + 1}.pdf`),
@@ -425,10 +425,6 @@ useScrollReveal()
     </Teleport>
 
     <!-- PDF Scrollable Preview Modal (for CHRM Case Study) -->
-    <CaseStudyPdfViewer
-      :show="showPdfPreview"
-      :pdf-url="currentPdfUrl"
-      @close="closePdfPreview"
-    />
+    <CaseStudyPdfViewer :show="showPdfPreview" :pdf-url="currentPdfUrl" @close="closePdfPreview" />
   </div>
 </template>
