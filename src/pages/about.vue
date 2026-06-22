@@ -81,6 +81,10 @@ const educations = [
     image: "/vinh-university.jpg",
   },
 ];
+
+function openFile() {
+  window.open('https://drive.google.com/drive/u/0/folders/1uhZkKMwfjzuX_nanNUM_0K3LXEhKLCBu', '_blank');
+}
 </script>
 
 <template>
@@ -139,11 +143,11 @@ const educations = [
             </div>
 
             <!-- Download CV Button -->
-            <a href="/CV_UIUX_HUYDANG.pdf" download="CV_UIUX_HUYDANG.pdf" target="_blank"
-              class="inline-flex items-center justify-center gap-2 h-12 px-6 bg-[#2A2A2A] text-white text-base font-medium leading-6 rounded-[4px] w-full lg:w-fit mt-4 lg:mt-0">
+            <div @click="openFile"
+              class="inline-flex items-center cursor-pointer justify-center gap-2 h-12 px-[24px] py-[12px] bg-[#2A2A2A] text-white text-base font-medium leading-6 rounded-[4px] w-full lg:w-fit mt-4 lg:mt-0">
               <img src="/images/icons/icon-download.svg" alt="" width="24" height="24" />
               TẢI XUỐNG CV
-            </a>
+            </div>
           </div>
 
           <!-- Right Column - Profile Picture -->
