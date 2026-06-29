@@ -3,7 +3,7 @@ import VuePdfEmbed from 'vue-pdf-embed'
 
 interface Props {
   show: boolean
-  pdfUrl: string
+  pdfUrl: string | string[]
 }
 
 const props = defineProps<Props>()
@@ -13,6 +13,8 @@ const isLoading = ref(true)
 const contentRef = ref<HTMLElement | null>(null)
 const renderWidth = ref(1200)
 
+let loadedCount = 0
+
 function updateWidth() {
   if (contentRef.value) {
     // Render at the actual pixel width of the container so the canvas stays sharp
@@ -21,12 +23,20 @@ function updateWidth() {
 }
 
 function handleLoaded() {
-  isLoading.value = false
+  if (Array.isArray(props.pdfUrl)) {
+    loadedCount++
+    if (loadedCount >= props.pdfUrl.length) {
+      isLoading.value = false
+    }
+  } else {
+    isLoading.value = false
+  }
 }
 
 watch(() => props.show, (val) => {
   if (val) {
     isLoading.value = true
+    loadedCount = 0
     document.body.style.overflow = 'hidden'
     nextTick(updateWidth)
   } else {
@@ -77,14 +87,26 @@ onUnmounted(() => {
         </div>
 
         <!-- PDF content centered -->
-        <div ref="contentRef" class="max-w-[1200px] mx-auto pt-[60px]">
+        <div ref="contentRef" class="max-w-[1200px] mx-auto pt-[60px] pb-10">
           <ClientOnly>
-            <VuePdfEmbed
-              :source="pdfUrl"
-              :width="renderWidth"
-              class="pdf-pages"
-              @loaded="handleLoaded"
-            />
+            <template v-if="Array.isArray(pdfUrl)">
+              <VuePdfEmbed
+                v-for="(url, index) in pdfUrl"
+                :key="index"
+                :source="url"
+                :width="renderWidth"
+                class="pdf-pages"
+                @loaded="handleLoaded"
+              />
+            </template>
+            <template v-else>
+              <VuePdfEmbed
+                :source="pdfUrl"
+                :width="renderWidth"
+                class="pdf-pages"
+                @loaded="handleLoaded"
+              />
+            </template>
           </ClientOnly>
         </div>
       </div>

@@ -19,7 +19,7 @@ interface Project {
   actions: ProjectAction[]
   passwordProtected?: boolean
   caseStudyPdfs?: string[]
-  caseStudyPdf?: string
+  caseStudyPdf?: string | string[]
 }
 
 const activeTab = ref('Tất cả')
@@ -72,9 +72,9 @@ const projects: Project[] = [
     role: 'UIUX Design',
     actions: [
       { label: 'Link Figma', link: 'https://www.figma.com/design/CQwugvkVhfjCsqpLOuLyaW/cHRM-Demo?node-id=6530-35291&t=rFumOeWQ5yqnICzd-4', active: true },
-      { label: 'Case Study', link: '', active: false },
+      { label: 'Case Study', link: '', active: true },
     ],
-    passwordProtected: true,
+    caseStudyPdf: Array.from({ length: 8 }, (_, i) => `/slide-inno/slide-0${i + 1}.pdf`),
   },
   {
     id: 6,
@@ -170,7 +170,6 @@ const projects: Project[] = [
       { label: 'Link Figma', link: '', active: false },
       { label: 'Case Study', link: 'https://uxfoundation.vn/case-study/sendo-farm-brings-produce-from-the-farm-to-your-kitchen', active: true },
     ],
-    passwordProtected: true,
   },
   {
     id: 1,
@@ -207,9 +206,9 @@ const currentCaseStudyPdfs = ref<string[]>([])
 const currentCaseStudyIndex = ref(0)
 
 const showPdfPreview = ref(false)
-const currentPdfUrl = ref('')
+const currentPdfUrl = ref<string | string[]>('')
 
-function openPdfPreview(pdfUrl: string) {
+function openPdfPreview(pdfUrl: string | string[]) {
   currentPdfUrl.value = pdfUrl
   showPdfPreview.value = true
 }
@@ -424,7 +423,7 @@ useScrollReveal()
       </Transition>
     </Teleport>
 
-    <!-- PDF Scrollable Preview Modal (for CHRM Case Study) -->
+    <!-- PDF Scrollable Preview Modal (for CHRM and INNOVATOR ACADEMY) -->
     <CaseStudyPdfViewer :show="showPdfPreview" :pdf-url="currentPdfUrl" @close="closePdfPreview" />
   </div>
 </template>
