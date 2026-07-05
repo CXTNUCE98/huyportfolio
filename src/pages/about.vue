@@ -22,11 +22,13 @@ const experiences = [
     period: "07/2024 - 05/2026",
     role: "UIUX Designer",
     description: [
-      "Thiết kế giao diện Website, Mobile app ở nhiều lĩnh vực và hệ thống quản lý nội bộ cho doanh nghiệp.",
-      "Phối hợp cùng PM, BA và Developer để phân tích yêu cầu và xây dựng trải nghiệm người dùng tối ưu.",
-      "Xây mới và quản lý Design System đảm bảo tính nhất quán giữa các sản phẩm số của doanh nghiệp",
-      "Tối ưu trải nghiệm người dùng cho ứng dụng mobile dựa trên hành vi sử dụng thực tế.",
-      "Thiết kế dashboard và giao diện dữ liệu phục vụ quản lý và vận hành.",
+      "Thiết kế giao diện Web và Mobile cho các hệ thống doanh nghiệp, đảm bảo tính trực quan và đáp ứng nhu cầu sử dụng thực tế của người dùng",
+      "Chịu trách nhiệm xây dựng và duy trì Design System dùng chung cho nhiều sản phẩm, chuẩn hoá Guideline nhằm đảm bảo tính nhất quán",
+      "Đề xuất và thiết kế giải pháp Self-service cho hơn 11.000 nhân viên, số hóa các quy trình như đăng ký nghỉ dưỡng và nhận quà Tết, giúp giảm đáng kể khối lượng xử lý thủ công của HR.",
+      "Phối hợp với PM, BA, Dev từ giai đoạn Discovery đến Handoff để đảm bảo tính khả thi khi triển khai",
+      "Thực hiện UX Audit và đề xuất cải tiến dựa trên phản hồi của người dùng, stakeholder và mục tiêu kinh doanh.",
+      "Dự án tiêu biểu: Super App AIO - Chuyển đổi số Việt Nam (Vietnam Digital Awards) VDA năm 2023",
+      "Thành tích: Giải nhì cuộc thi Ngày sáng tạo do công ty tổ chức năm 2025",
     ],
   },
   {
@@ -34,9 +36,10 @@ const experiences = [
     period: "10/2022 - 06/2024",
     role: "UIUX Designer",
     description: [
-      "Tham gia phát triển sản phẩm thương mại điện tử cho thị trường quốc tế trong môi trường startup.",
-      "Thiết kế trải nghiệm mua sắm và tối ưu luồng thanh toán nhằm cải thiện trải nghiệm người dùng.",
-      "Cải tiến giao diện dựa trên phản hồi người dùng và yêu cầu kinh doanh.",
+      "Thiết kế trải nghiệm người dùng cho nền tảng thương mại điện tử phục vụ thị trường quốc tế, tập trung vào luồng mua hàng và quản lý đơn hàng.",
+      "Xây dựng Wireframe, Hi-fi UI và Interactive Prototype bằng Figma, đảm bảo cân bằng giữa nhu cầu kinh doanh và trải nghiệm người dùng.",
+      "Tối ưu các luồng quan trọng như thanh toán và chuyển đổi nhằm giảm ma sát trong hành trình sử dụng sản phẩm.",
+      "Phân tích phản hồi người dùng và dữ liệu sử dụng để tối ưu các luồng quan trọng như thanh toán, quản lý đơn hàng và chuyển đổi.",
     ],
   },
   {
@@ -44,9 +47,10 @@ const experiences = [
     period: "10/2021 - 06/2022",
     role: "Fresser",
     description: [
-      "Tiếp cận và xây dựng Design System trong quá trình phát triển sản phẩm ",
-      "Hỗ trợ thiết kế wireframe, mockup và prototype bằng Figma.",
-      "Được tham gia nhiều dự án có quy mô lớn như Vnpost, Spro, ...",
+      "Tham gia thiết kế Wireframe, Mockup và Prototype cho các dự án chuyển đổi số sử dụng Figma.",
+      "Hỗ trợ xây dựng và áp dụng Design System nhằm đảm bảo tính nhất quán trong thiết kế và tối ưu quy trình làm việc.",
+      "Tham gia các dự án quy mô lớn như VNPost và SPRO, tích lũy kinh nghiệm thiết kế cho hệ thống nghiệp vụ và sản phẩm doanh nghiệp.",
+      "Học hỏi và áp dụng các nguyên tắc về UX, Information Architecture và Responsive Design trong quá trình phát triển sản phẩm.",
     ],
   },
 ];
@@ -180,9 +184,9 @@ function openFile() {
         </div>
 
         <!-- Right - Experience Items -->
-        <div class="flex flex-col gap-4 lg:gap-6 flex-1">
+        <div class="flex flex-col gap-4 lg:gap-5 flex-1">
           <div v-for="(exp, index) in experiences" :key="index"
-            class="bg-[#F8F8F8] rounded-[4px] p-4 lg:p-6 cursor-pointer scroll-reveal"
+            class="bg-[#F8F8F8] rounded-[4px] p-4 lg:p-5 cursor-pointer scroll-reveal"
             :style="{ transitionDelay: `${index * 100}ms` }" @click="toggleExperience(index)">
             <div class="flex items-center justify-between gap-4" :class="expandedExperience === index
               ? 'pb-4 border-b border-[#EAEAEA]'
@@ -201,12 +205,16 @@ function openFile() {
               <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"
                 class="shrink-0 transition-transform duration-300 hidden lg:block"
                 :class="expandedExperience !== index ? 'rotate-180' : ''">
-                <path d="M6.81 16.13L12.6 10.34C13.37 9.57 14.63 9.57 15.4 10.34L21.19 16.13" fill="#535353" />
+                <path
+                  d="M21.7935 16.31L18.0485 12.565L15.7618 10.2667C14.7935 9.29832 13.2185 9.29832 12.2502 10.2667L6.20683 16.31C5.4135 17.1033 5.98516 18.4567 7.0935 18.4567H13.6385H20.9068C22.0268 18.4567 22.5868 17.1033 21.7935 16.31Z"
+                  fill="#535353" />
               </svg>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
                 class="shrink-0 transition-transform duration-300 lg:hidden"
-                :class="expandedExperience === index ? 'rotate-180' : ''">
-                <path d="M5.84 13.82L10.8 8.86C11.46 8.2 12.54 8.2 13.2 8.86L18.16 13.82" fill="#535353" />
+                :class="expandedExperience !== index ? 'rotate-180' : ''">
+                <path
+                  d="M18.6801 13.98L15.4701 10.77L13.5101 8.80999C12.6801 7.97999 11.3301 7.97999 10.5001 8.80999L5.32014 13.98C4.64014 14.66 5.13014 15.82 6.08014 15.82H11.6901H17.9201C18.8801 15.82 19.3601 14.66 18.6801 13.98Z"
+                  fill="#535353" />
               </svg>
             </div>
 
@@ -217,7 +225,7 @@ function openFile() {
                 : 'grid-rows-[0fr]'
                 ">
               <div class="overflow-hidden">
-                <ul class="pt-6 text-base leading-[1.5] text-[#525252] list-disc pl-5 space-y-1">
+                <ul class="pt-6 text-base leading-[1.5] font-light text-[#525252] list-disc pl-5 space-y-1">
                   <li v-for="(line, i) in exp.description" :key="i">
                     {{ line }}
                   </li>

@@ -322,12 +322,16 @@ useScrollReveal()
 
           <!-- Description -->
           <div class="pt-[17px]">
-            <p class="text-base lg:text-lg leading-[1.5] lg:leading-[1.56] text-[#525252]">
-              Với hơn <strong>4 năm kinh nghiệm</strong> trong lĩnh vực thiết kế trải nghiệm người dùng. Theo đuổi phong
-              cách <strong>tối giản, hiện đại</strong> và ưu tiên trải nghiệm người dùng thực tế. Thành thạo công cụ
-              <strong>Figma</strong> và <strong>Design System</strong>, có kiến
-              thức cơ bản về <strong>HTML/CSS</strong>, khả năng <strong>phối hợp tốt với BA, Developer</strong> và tinh
-              thần <strong>trách nhiệm cao</strong> trong công việc. Luôn <strong>cập nhật xu hướng, ứng dụng
+            <p class="text-base lg:text-xl leading-[1.6] lg:leading-[1.8] font-light text-[#525252]">
+              Với hơn <strong class="font-600">4 năm kinh nghiệm</strong> trong lĩnh vực thiết kế trải nghiệm người
+              dùng. Theo đuổi phong
+              cách <strong class="font-600">tối giản, hiện đại</strong> và ưu tiên trải nghiệm người dùng thực tế. Thành
+              thạo công cụ
+              <strong class="font-600">Figma</strong> và <strong class="font-600">Design System</strong>, có kiến
+              thức cơ bản về <strong class="font-600">HTML/CSS</strong>, khả năng <strong class="font-600">phối hợp tốt
+                với BA, Developer</strong> và tinh
+              thần <strong class="font-600">trách nhiệm cao</strong> trong công việc. Luôn <strong class="font-600">cập
+                nhật xu hướng, ứng dụng
                 AI</strong> vào work flow
               mới nhằm tạo ra các sản phẩm trực quan và chất
               lượng.
