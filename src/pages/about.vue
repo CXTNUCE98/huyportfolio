@@ -105,10 +105,10 @@ function openFile() {
           <div class="flex flex-col gap-8 flex-1 h-full lg:h-[450px] justify-between scroll-reveal">
             <div class="flex flex-col gap-4">
               <p class="text-[18px] leading-[24px] font-light text-[#525252]">
-                Mình là <strong class="font-bold">Huy</strong> - Một chàng trai
-                thích ngắm nhìn thế giới dưới góc độ hài hước
-                <br />
-                <br />
+                <!-- Mình là <strong class="font-bold">Huy</strong> - Một chàng trai
+                thích ngắm nhìn thế giới dưới góc độ hài hước -->
+                <!-- <br />
+                <br /> -->
                 Từ nhỏ, mình đã luôn tò mò cách mọi thứ vận hành. Không chỉ là
                 chúng trông như thế nào, mà là tại sao chúng hoạt động theo cách
                 đó và liệu có cách nào có thể làm tốt hơn không. Nhờ đó, mình
