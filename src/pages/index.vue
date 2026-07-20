@@ -24,24 +24,24 @@ interface Project {
 
 const activeTab = ref('Tất cả')
 
-const tabs = ['Tất cả', 'Website', 'Mobile', 'Case Studies']
+const tabs = ['Tất cả', 'Website', 'Mobile']
 
 const projects: Project[] = [
   {
-    id: 2,
-    image: '/images/projects/project-3.png',
-    category: 'Case Studies',
+    id: 4,
+    image: '/images/projects/project-4.png',
+    category: 'Website',
     year: '2024',
-    name: 'QUIZLET',
-    title: 'Giải pháp giúp người đi làm ôn luyện & ghi nhớ đúng nhu cầu cá nhân',
-    tags: ['Research', 'UX Design'],
+    name: 'INNOVATOR ACADEMY',
+    title: 'Nền tảng bán khoá học trực tuyến',
+    tags: ['Branding', 'UI Design', 'Responsive'],
     domain: 'Giáo dục',
-    role: 'Research, Design',
+    role: 'UIUX Design',
     actions: [
-      { label: 'Link Figma', link: 'https://www.figma.com/design/comaiHItHsKJhtHOWBssDB/Quizlet-Case-Study?node-id=4-12523&t=erhbj7dFQ0U7gU8D-1', active: true },
+      { label: 'Link Figma', link: 'https://www.figma.com/design/CQwugvkVhfjCsqpLOuLyaW/cHRM-Demo?node-id=6530-35291&t=rFumOeWQ5yqnICzd-4', active: true },
       { label: 'Case Study', link: '', active: true },
     ],
-    caseStudyPdfs: Array.from({ length: 44 }, (_, i) => `/slide-quizlet/${i + 1}.pdf`),
+    caseStudyPdf: Array.from({ length: 8 }, (_, i) => `/slide-inno/slide-0${i + 1}.pdf`),
   },
   {
     id: 5,
@@ -76,22 +76,7 @@ const projects: Project[] = [
     ],
     passwordProtected: true,
   },
-  {
-    id: 4,
-    image: '/images/projects/project-4.png',
-    category: 'Website',
-    year: '2024',
-    name: 'INNOVATOR ACADEMY',
-    title: 'Nền tảng bán khoá học trực tuyến',
-    tags: ['Branding', 'UI Design', 'Responsive'],
-    domain: 'Giáo dục',
-    role: 'UIUX Design',
-    actions: [
-      { label: 'Link Figma', link: 'https://www.figma.com/design/CQwugvkVhfjCsqpLOuLyaW/cHRM-Demo?node-id=6530-35291&t=rFumOeWQ5yqnICzd-4', active: true },
-      { label: 'Case Study', link: '', active: true },
-    ],
-    caseStudyPdf: Array.from({ length: 8 }, (_, i) => `/slide-inno/slide-0${i + 1}.pdf`),
-  },
+
   {
     id: 6,
     image: '/images/projects/PMS.png',
@@ -157,6 +142,22 @@ const projects: Project[] = [
   //   ],
   //   passwordProtected: true,
   // },
+  {
+    id: 2,
+    image: '/images/projects/project-3.png',
+    category: 'Case Studies',
+    year: '2024',
+    name: 'QUIZLET',
+    title: 'Giải pháp giúp người đi làm ôn luyện & ghi nhớ đúng nhu cầu cá nhân',
+    tags: ['Research', 'UX Design'],
+    domain: 'Giáo dục',
+    role: 'Research, Design',
+    actions: [
+      { label: 'Link Figma', link: 'https://www.figma.com/design/comaiHItHsKJhtHOWBssDB/Quizlet-Case-Study?node-id=4-12523&t=erhbj7dFQ0U7gU8D-1', active: true },
+      { label: 'Case Study', link: '', active: true },
+    ],
+    caseStudyPdfs: Array.from({ length: 44 }, (_, i) => `/slide-quizlet/${i + 1}.pdf`),
+  },
   {
     id: 3,
     image: '/images/projects/project-2.png',
@@ -347,7 +348,7 @@ useScrollReveal()
       <div class="max-w-[1080px] mx-auto py-6 pb-16 lg:py-[100px] lg:pb-[200px]">
         <div class="flex flex-col gap-6">
           <!-- Title -->
-          <h2 class="text-[32px] font-bold leading-[1.25] text-[#2A2A2A] scroll-reveal">Một vài dự án tiêu biểu</h2>
+          <h2 class="text-[32px] font-bold leading-[1.25] text-[#2A2A2A] scroll-reveal">Dự án tiêu biểu</h2>
 
           <!-- Tabs -->
           <div class="flex gap-6 scroll-reveal" style="transition-delay: 100ms">
