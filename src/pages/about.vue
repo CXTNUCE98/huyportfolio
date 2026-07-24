@@ -22,13 +22,15 @@ const experiences = [
     period: "07/2024 - 05/2026",
     role: "UIUX Designer",
     description: [
-      "Thiết kế giao diện Web và Mobile cho các hệ thống doanh nghiệp, đảm bảo tính trực quan và đáp ứng nhu cầu sử dụng thực tế của người dùng",
-      "Chịu trách nhiệm xây dựng và duy trì Design System dùng chung cho nhiều sản phẩm, chuẩn hoá Guideline nhằm đảm bảo tính nhất quán",
+      "Thiết kế UI/UX cho các hệ thống của công ty, đảm bảo tính trực quan và đáp ứng nhu cầu sử dụng thực tế của người dùng.",
+      "Chịu trách nhiệm xây dựng và cải tiến Design System, đảm bảo tính nhất quán toàn hệ thống.",
+      "Phối hợp với PM, BA, Dev từ giai đoạn Discovery đến Handoff để đảm bảo tính khả thi khi triển khai.",
+      "Thực hiện user research: Interview, UT, Survey để thu thập insight",
+      "Nghiên cứu sản phẩm đối thủ để đưa ra những giải pháp phù hợp với đặc thù của business.",
+      "Đề xuất cải tiến dựa trên số liệu và phản hồi của người dùng và các bên liên quan.",
       "Đề xuất và thiết kế giải pháp Self-service cho hơn 11.000 nhân viên, số hóa các quy trình như đăng ký nghỉ dưỡng và nhận quà Tết, giúp giảm đáng kể khối lượng xử lý thủ công của HR.",
-      "Phối hợp với PM, BA, Dev từ giai đoạn Discovery đến Handoff để đảm bảo tính khả thi khi triển khai",
-      "Thực hiện UX Audit và đề xuất cải tiến dựa trên phản hồi của người dùng, stakeholder và mục tiêu kinh doanh.",
-      "Dự án tiêu biểu: Super App AIO - Chuyển đổi số Việt Nam (Vietnam Digital Awards) VDA năm 2023",
-      "Thành tích: Giải nhì cuộc thi Ngày sáng tạo do công ty tổ chức năm 2025",
+      "Dự án tiêu biểu: Super App AIO - Chuyển đổi số Việt Nam (Vietnam Digital Awards - VDA) năm 2023.",
+      "Thành tích: Giải nhì cuộc thi Ngày sáng tạo năm 2025",
     ],
   },
   {
@@ -38,7 +40,6 @@ const experiences = [
     description: [
       "Thiết kế trải nghiệm người dùng cho nền tảng thương mại điện tử phục vụ thị trường quốc tế, tập trung vào luồng mua hàng và quản lý đơn hàng.",
       "Xây dựng Wireframe, Hi-fi UI và Interactive Prototype bằng Figma, đảm bảo cân bằng giữa nhu cầu kinh doanh và trải nghiệm người dùng.",
-      "Tối ưu các luồng quan trọng như thanh toán và chuyển đổi nhằm giảm ma sát trong hành trình sử dụng sản phẩm.",
       "Phân tích phản hồi người dùng và dữ liệu sử dụng để tối ưu các luồng quan trọng như thanh toán, quản lý đơn hàng và chuyển đổi.",
     ],
   },
@@ -47,10 +48,10 @@ const experiences = [
     period: "10/2021 - 06/2022",
     role: "Fresser",
     description: [
-      "Tham gia thiết kế Wireframe, Mockup và Prototype cho các dự án chuyển đổi số sử dụng Figma.",
-      "Hỗ trợ xây dựng và áp dụng Design System nhằm đảm bảo tính nhất quán trong thiết kế và tối ưu quy trình làm việc.",
       "Tham gia các dự án quy mô lớn như VNPost và SPRO, tích lũy kinh nghiệm thiết kế cho hệ thống nghiệp vụ và sản phẩm doanh nghiệp.",
-      "Học hỏi và áp dụng các nguyên tắc về UX, Information Architecture và Responsive Design trong quá trình phát triển sản phẩm.",
+      "Áp dụng các nguyên tắc về UX, Information Architecture và Responsive Design trong quá trình phát triển sản phẩm.",
+      "Thực hiện benchmark các sản phẩm cùng lĩnh vực để tham chiếu, đánh giá và đề xuất các giải pháp phù hợp với định hướng sản phẩm.",
+      "Phối hợp với DEV trước và sau khi triển khai, đảm bảo giao diện thực tế đúng với thiết kế.",
     ],
   },
 ];
